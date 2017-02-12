@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3243FA41E36176F00AC2921 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3243FA21E36176F00AC2921 /* RegisterViewController.swift */; };
+		E3243FA51E36176F00AC2921 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3243FA31E36176F00AC2921 /* RegisterViewController.xib */; };
+		E33CF8731E3A057A001D56EA /* Toy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33CF8721E3A057A001D56EA /* Toy.swift */; };
+		E34439AB1E3767AF00493600 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34439A91E3767AF00493600 /* MapaViewController.swift */; };
+		E34439AC1E3767AF00493600 /* MapaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34439AA1E3767AF00493600 /* MapaViewController.xib */; };
+		E34439AF1E3767BE00493600 /* NuevoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34439AD1E3767BE00493600 /* NuevoViewController.swift */; };
+		E34439B01E3767BE00493600 /* NuevoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34439AE1E3767BE00493600 /* NuevoViewController.xib */; };
+		E34439B31E3767CE00493600 /* NotifsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34439B11E3767CE00493600 /* NotifsViewController.swift */; };
+		E34439B41E3767CE00493600 /* NotifsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34439B21E3767CE00493600 /* NotifsViewController.xib */; };
+		E34439B71E3767DB00493600 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34439B51E3767DB00493600 /* PerfilViewController.swift */; };
+		E34439B81E3767DB00493600 /* PerfilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34439B61E3767DB00493600 /* PerfilViewController.xib */; };
+		E34439BB1E37692B00493600 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34439B91E37692B00493600 /* SearchViewController.swift */; };
+		E34439BC1E37692B00493600 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34439BA1E37692B00493600 /* SearchViewController.xib */; };
+		E35B2C1C1E4BBC6E00860E7E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B2C1A1E4BBC6E00860E7E /* CollectionViewController.swift */; };
+		E35B2C1D1E4BBC6E00860E7E /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E35B2C1B1E4BBC6E00860E7E /* CollectionViewController.xib */; };
+		E368FAE01E504B680092BCDC /* ToyGuay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E368FADE1E504B680092BCDC /* ToyGuay.xcdatamodeld */; };
+		E37096F61E3D4D1A0097F7CA /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37096F41E3D4D1A0097F7CA /* FilterTableViewController.swift */; };
+		E37096F71E3D4D1A0097F7CA /* FilterTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E37096F51E3D4D1A0097F7CA /* FilterTableViewController.xib */; };
 		E381C23F1E33D84600560457 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381C23E1E33D84600560457 /* AppDelegate.swift */; };
 		E381C2411E33D84600560457 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381C2401E33D84600560457 /* ViewController.swift */; };
 		E381C2441E33D84600560457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E381C2421E33D84600560457 /* Main.storyboard */; };
@@ -15,6 +33,18 @@
 		E381C24C1E33D84600560457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E381C24A1E33D84600560457 /* LaunchScreen.storyboard */; };
 		E381C2571E33D84700560457 /* toyguay_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381C2561E33D84700560457 /* toyguay_iOSTests.swift */; };
 		E381C2621E33D84700560457 /* toyguay_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381C2611E33D84700560457 /* toyguay_iOSUITests.swift */; };
+		E3B37A971E4F6D3600DD2B03 /* ToyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B37A961E4F6D3600DD2B03 /* ToyCollectionView.swift */; };
+		E3C41F811E37746800DD5975 /* ToyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C41F7F1E37746800DD5975 /* ToyCollectionViewCell.swift */; };
+		E3C41F821E37746800DD5975 /* ToyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C41F801E37746800DD5975 /* ToyCollectionViewCell.xib */; };
+		E3C41F851E37787900DD5975 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C41F831E37787900DD5975 /* ProductsViewController.swift */; };
+		E3C41F861E37787900DD5975 /* ProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C41F841E37787900DD5975 /* ProductsViewController.xib */; };
+		E3C41F881E377AA000DD5975 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C41F871E377AA000DD5975 /* GridLayout.swift */; };
+		E3ECFBCE1E3505E200604344 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ECFBCA1E3505E200604344 /* Bolts.framework */; };
+		E3ECFBCF1E3505E200604344 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ECFBCB1E3505E200604344 /* FBSDKCoreKit.framework */; };
+		E3ECFBD01E3505E200604344 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ECFBCC1E3505E200604344 /* FBSDKLoginKit.framework */; };
+		E3ECFBD11E3505E200604344 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ECFBCD1E3505E200604344 /* FBSDKShareKit.framework */; };
+		E3ECFBD41E35097D00604344 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ECFBD21E35097D00604344 /* LogInViewController.swift */; };
+		E3ECFBD51E35097D00604344 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3ECFBD31E35097D00604344 /* LogInViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +65,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30BE56114BF428343648DE59 /* Pods-toyguay_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toyguay_iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-toyguay_iOSUITests/Pods-toyguay_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4DB30229A17984CD367B67F1 /* Pods-toyguay_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toyguay_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toyguay_iOS/Pods-toyguay_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		7A9E6547060655A5D2654C24 /* Pods-toyguay_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toyguay_iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-toyguay_iOSTests/Pods-toyguay_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		7AC272C28E065C43E9D72014 /* Pods-toyguay_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toyguay_iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toyguay_iOSTests/Pods-toyguay_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE6B2B3996FEAAF84815FB3A /* Pods-toyguay_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toyguay_iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toyguay_iOSUITests/Pods-toyguay_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D31CAAB3E93F39D002893E91 /* Pods-toyguay_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toyguay_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-toyguay_iOS/Pods-toyguay_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		E3243FA21E36176F00AC2921 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E3243FA31E36176F00AC2921 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		E33CF8721E3A057A001D56EA /* Toy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toy.swift; sourceTree = "<group>"; };
+		E34439A91E3767AF00493600 /* MapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		E34439AA1E3767AF00493600 /* MapaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapaViewController.xib; sourceTree = "<group>"; };
+		E34439AD1E3767BE00493600 /* NuevoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NuevoViewController.swift; sourceTree = "<group>"; };
+		E34439AE1E3767BE00493600 /* NuevoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NuevoViewController.xib; sourceTree = "<group>"; };
+		E34439B11E3767CE00493600 /* NotifsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifsViewController.swift; sourceTree = "<group>"; };
+		E34439B21E3767CE00493600 /* NotifsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotifsViewController.xib; sourceTree = "<group>"; };
+		E34439B51E3767DB00493600 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		E34439B61E3767DB00493600 /* PerfilViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PerfilViewController.xib; sourceTree = "<group>"; };
+		E34439B91E37692B00493600 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E34439BA1E37692B00493600 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		E35B2C1A1E4BBC6E00860E7E /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		E35B2C1B1E4BBC6E00860E7E /* CollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
+		E368FADF1E504B680092BCDC /* ToyGuay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToyGuay.xcdatamodel; sourceTree = "<group>"; };
+		E37096F41E3D4D1A0097F7CA /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
+		E37096F51E3D4D1A0097F7CA /* FilterTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableViewController.xib; sourceTree = "<group>"; };
 		E381C23B1E33D84600560457 /* toyguay_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toyguay_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E381C23E1E33D84600560457 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E381C2401E33D84600560457 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +103,19 @@
 		E381C25D1E33D84700560457 /* toyguay_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = toyguay_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E381C2611E33D84700560457 /* toyguay_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toyguay_iOSUITests.swift; sourceTree = "<group>"; };
 		E381C2631E33D84700560457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3B37A961E4F6D3600DD2B03 /* ToyCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyCollectionView.swift; sourceTree = "<group>"; };
+		E3C41F7F1E37746800DD5975 /* ToyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyCollectionViewCell.swift; sourceTree = "<group>"; };
+		E3C41F801E37746800DD5975 /* ToyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToyCollectionViewCell.xib; sourceTree = "<group>"; };
+		E3C41F831E37787900DD5975 /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		E3C41F841E37787900DD5975 /* ProductsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductsViewController.xib; sourceTree = "<group>"; };
+		E3C41F871E377AA000DD5975 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		E3ECFBCA1E3505E200604344 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		E3ECFBCB1E3505E200604344 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		E3ECFBCC1E3505E200604344 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		E3ECFBCD1E3505E200604344 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		E3ECFBD21E35097D00604344 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		E3ECFBD31E35097D00604344 /* LogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
+		E3ECFBD61E350E4500604344 /* toyguay_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = toyguay_iOS.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +123,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3ECFBCF1E3505E200604344 /* FBSDKCoreKit.framework in Frameworks */,
+				E3ECFBD11E3505E200604344 /* FBSDKShareKit.framework in Frameworks */,
+				E3ECFBD01E3505E200604344 /* FBSDKLoginKit.framework in Frameworks */,
+				E3ECFBCE1E3505E200604344 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +147,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E9788E9628B30C2F5F1F896 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DB30229A17984CD367B67F1 /* Pods-toyguay_iOS.debug.xcconfig */,
+				D31CAAB3E93F39D002893E91 /* Pods-toyguay_iOS.release.xcconfig */,
+				7AC272C28E065C43E9D72014 /* Pods-toyguay_iOSTests.debug.xcconfig */,
+				7A9E6547060655A5D2654C24 /* Pods-toyguay_iOSTests.release.xcconfig */,
+				CE6B2B3996FEAAF84815FB3A /* Pods-toyguay_iOSUITests.debug.xcconfig */,
+				30BE56114BF428343648DE59 /* Pods-toyguay_iOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C41BF27DD5092C622BFFF12F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3ECFBCA1E3505E200604344 /* Bolts.framework */,
+				E3ECFBCB1E3505E200604344 /* FBSDKCoreKit.framework */,
+				E3ECFBCC1E3505E200604344 /* FBSDKLoginKit.framework */,
+				E3ECFBCD1E3505E200604344 /* FBSDKShareKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E33CF8711E3A0562001D56EA /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E368FADB1E504B190092BCDC /* CoreData */,
+				E33CF8721E3A057A001D56EA /* Toy.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		E34439A41E37675700493600 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3ECFBD21E35097D00604344 /* LogInViewController.swift */,
+				E3ECFBD31E35097D00604344 /* LogInViewController.xib */,
+				E3243FA21E36176F00AC2921 /* RegisterViewController.swift */,
+				E3243FA31E36176F00AC2921 /* RegisterViewController.xib */,
+				E34439B91E37692B00493600 /* SearchViewController.swift */,
+				E34439BA1E37692B00493600 /* SearchViewController.xib */,
+				E3C41F831E37787900DD5975 /* ProductsViewController.swift */,
+				E3C41F841E37787900DD5975 /* ProductsViewController.xib */,
+				E34439A91E3767AF00493600 /* MapaViewController.swift */,
+				E34439AA1E3767AF00493600 /* MapaViewController.xib */,
+				E34439AD1E3767BE00493600 /* NuevoViewController.swift */,
+				E34439AE1E3767BE00493600 /* NuevoViewController.xib */,
+				E34439B11E3767CE00493600 /* NotifsViewController.swift */,
+				E34439B21E3767CE00493600 /* NotifsViewController.xib */,
+				E34439B51E3767DB00493600 /* PerfilViewController.swift */,
+				E34439B61E3767DB00493600 /* PerfilViewController.xib */,
+				E3C41F871E377AA000DD5975 /* GridLayout.swift */,
+				E37096F41E3D4D1A0097F7CA /* FilterTableViewController.swift */,
+				E37096F51E3D4D1A0097F7CA /* FilterTableViewController.xib */,
+				E35B2C1A1E4BBC6E00860E7E /* CollectionViewController.swift */,
+				E35B2C1B1E4BBC6E00860E7E /* CollectionViewController.xib */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		E368FADB1E504B190092BCDC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E368FADD1E504B380092BCDC /* Properties */,
+				E368FADC1E504B260092BCDC /* Classes */,
+				E368FADE1E504B680092BCDC /* ToyGuay.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		E368FADC1E504B260092BCDC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		E368FADD1E504B380092BCDC /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Properties;
+			sourceTree = "<group>";
+		};
 		E381C2321E33D84600560457 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +239,8 @@
 				E381C2551E33D84700560457 /* toyguay_iOSTests */,
 				E381C2601E33D84700560457 /* toyguay_iOSUITests */,
 				E381C23C1E33D84600560457 /* Products */,
+				0E9788E9628B30C2F5F1F896 /* Pods */,
+				C41BF27DD5092C622BFFF12F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +257,9 @@
 		E381C23D1E33D84600560457 /* toyguay_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E33CF8711E3A0562001D56EA /* model */,
+				E3C41F7E1E37745300DD5975 /* views */,
+				E3ECFBD61E350E4500604344 /* toyguay_iOS.entitlements */,
 				E381C23E1E33D84600560457 /* AppDelegate.swift */,
 				E381C2401E33D84600560457 /* ViewController.swift */,
 				E381C2421E33D84600560457 /* Main.storyboard */,
@@ -106,6 +267,7 @@
 				E381C24A1E33D84600560457 /* LaunchScreen.storyboard */,
 				E381C24D1E33D84600560457 /* Info.plist */,
 				E381C2451E33D84600560457 /* toyguay_iOS.xcdatamodeld */,
+				E34439A41E37675700493600 /* controllers */,
 			);
 			path = toyguay_iOS;
 			sourceTree = "<group>";
@@ -128,6 +290,16 @@
 			path = toyguay_iOSUITests;
 			sourceTree = "<group>";
 		};
+		E3C41F7E1E37745300DD5975 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				E3C41F7F1E37746800DD5975 /* ToyCollectionViewCell.swift */,
+				E3C41F801E37746800DD5975 /* ToyCollectionViewCell.xib */,
+				E3B37A961E4F6D3600DD2B03 /* ToyCollectionView.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +307,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E381C2661E33D84700560457 /* Build configuration list for PBXNativeTarget "toyguay_iOS" */;
 			buildPhases = (
+				5AFFA134B2213CF238A18DA9 /* [CP] Check Pods Manifest.lock */,
 				E381C2371E33D84600560457 /* Sources */,
 				E381C2381E33D84600560457 /* Frameworks */,
 				E381C2391E33D84600560457 /* Resources */,
+				4B4E4DBAE1D00688CF60A306 /* [CP] Embed Pods Frameworks */,
+				BDF753206127F7058412EFD9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +327,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E381C2691E33D84700560457 /* Build configuration list for PBXNativeTarget "toyguay_iOSTests" */;
 			buildPhases = (
+				2B8A420694E7FD2925F641DC /* [CP] Check Pods Manifest.lock */,
 				E381C24E1E33D84700560457 /* Sources */,
 				E381C24F1E33D84700560457 /* Frameworks */,
 				E381C2501E33D84700560457 /* Resources */,
+				489322C34CCC07BCE47EB2B5 /* [CP] Embed Pods Frameworks */,
+				D7DEA0D407DBD9508F41D841 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +348,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E381C26C1E33D84700560457 /* Build configuration list for PBXNativeTarget "toyguay_iOSUITests" */;
 			buildPhases = (
+				7A92527FA3D8E680E355E982 /* [CP] Check Pods Manifest.lock */,
 				E381C2591E33D84700560457 /* Sources */,
 				E381C25A1E33D84700560457 /* Frameworks */,
 				E381C25B1E33D84700560457 /* Resources */,
+				73691217828C17A00143B23D /* [CP] Embed Pods Frameworks */,
+				73566DA544E0B25C6E69961F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,6 +379,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 6ST72RTMK9;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					E381C2511E33D84700560457 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -238,6 +424,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E34439AC1E3767AF00493600 /* MapaViewController.xib in Resources */,
+				E3C41F821E37746800DD5975 /* ToyCollectionViewCell.xib in Resources */,
+				E35B2C1D1E4BBC6E00860E7E /* CollectionViewController.xib in Resources */,
+				E3C41F861E37787900DD5975 /* ProductsViewController.xib in Resources */,
+				E3ECFBD51E35097D00604344 /* LogInViewController.xib in Resources */,
+				E3243FA51E36176F00AC2921 /* RegisterViewController.xib in Resources */,
+				E34439B01E3767BE00493600 /* NuevoViewController.xib in Resources */,
+				E34439B41E3767CE00493600 /* NotifsViewController.xib in Resources */,
+				E34439B81E3767DB00493600 /* PerfilViewController.xib in Resources */,
+				E34439BC1E37692B00493600 /* SearchViewController.xib in Resources */,
+				E37096F71E3D4D1A0097F7CA /* FilterTableViewController.xib in Resources */,
 				E381C24C1E33D84600560457 /* LaunchScreen.storyboard in Resources */,
 				E381C2491E33D84600560457 /* Assets.xcassets in Resources */,
 				E381C2441E33D84600560457 /* Main.storyboard in Resources */,
@@ -260,12 +457,165 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B8A420694E7FD2925F641DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		489322C34CCC07BCE47EB2B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-toyguay_iOSTests/Pods-toyguay_iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B4E4DBAE1D00688CF60A306 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-toyguay_iOS/Pods-toyguay_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AFFA134B2213CF238A18DA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		73566DA544E0B25C6E69961F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-toyguay_iOSUITests/Pods-toyguay_iOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73691217828C17A00143B23D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-toyguay_iOSUITests/Pods-toyguay_iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A92527FA3D8E680E355E982 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BDF753206127F7058412EFD9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-toyguay_iOS/Pods-toyguay_iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7DEA0D407DBD9508F41D841 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-toyguay_iOSTests/Pods-toyguay_iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E381C2371E33D84600560457 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E34439AF1E3767BE00493600 /* NuevoViewController.swift in Sources */,
+				E3C41F811E37746800DD5975 /* ToyCollectionViewCell.swift in Sources */,
+				E33CF8731E3A057A001D56EA /* Toy.swift in Sources */,
+				E34439BB1E37692B00493600 /* SearchViewController.swift in Sources */,
+				E3B37A971E4F6D3600DD2B03 /* ToyCollectionView.swift in Sources */,
+				E35B2C1C1E4BBC6E00860E7E /* CollectionViewController.swift in Sources */,
+				E3ECFBD41E35097D00604344 /* LogInViewController.swift in Sources */,
+				E3243FA41E36176F00AC2921 /* RegisterViewController.swift in Sources */,
+				E34439B71E3767DB00493600 /* PerfilViewController.swift in Sources */,
+				E3C41F851E37787900DD5975 /* ProductsViewController.swift in Sources */,
+				E368FAE01E504B680092BCDC /* ToyGuay.xcdatamodeld in Sources */,
 				E381C2471E33D84600560457 /* toyguay_iOS.xcdatamodeld in Sources */,
+				E3C41F881E377AA000DD5975 /* GridLayout.swift in Sources */,
+				E34439AB1E3767AF00493600 /* MapaViewController.swift in Sources */,
+				E37096F61E3D4D1A0097F7CA /* FilterTableViewController.swift in Sources */,
+				E34439B31E3767CE00493600 /* NotifsViewController.swift in Sources */,
 				E381C2411E33D84600560457 /* ViewController.swift in Sources */,
 				E381C23F1E33D84600560457 /* AppDelegate.swift in Sources */,
 			);
@@ -417,9 +767,15 @@
 		};
 		E381C2671E33D84700560457 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DB30229A17984CD367B67F1 /* Pods-toyguay_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = toyguay_iOS/toyguay_iOS.entitlements;
 				DEVELOPMENT_TEAM = 6ST72RTMK9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = toyguay_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TheBardals.toyguay-iOS";
@@ -430,9 +786,15 @@
 		};
 		E381C2681E33D84700560457 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D31CAAB3E93F39D002893E91 /* Pods-toyguay_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = toyguay_iOS/toyguay_iOS.entitlements;
 				DEVELOPMENT_TEAM = 6ST72RTMK9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = toyguay_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TheBardals.toyguay-iOS";
@@ -443,6 +805,7 @@
 		};
 		E381C26A1E33D84700560457 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AC272C28E065C43E9D72014 /* Pods-toyguay_iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -458,6 +821,7 @@
 		};
 		E381C26B1E33D84700560457 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A9E6547060655A5D2654C24 /* Pods-toyguay_iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -473,6 +837,7 @@
 		};
 		E381C26D1E33D84700560457 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE6B2B3996FEAAF84815FB3A /* Pods-toyguay_iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6ST72RTMK9;
@@ -487,6 +852,7 @@
 		};
 		E381C26E1E33D84700560457 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30BE56114BF428343648DE59 /* Pods-toyguay_iOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6ST72RTMK9;
@@ -518,6 +884,7 @@
 				E381C2681E33D84700560457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E381C2691E33D84700560457 /* Build configuration list for PBXNativeTarget "toyguay_iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +893,7 @@
 				E381C26B1E33D84700560457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E381C26C1E33D84700560457 /* Build configuration list for PBXNativeTarget "toyguay_iOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,10 +902,21 @@
 				E381C26E1E33D84700560457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		E368FADE1E504B680092BCDC /* ToyGuay.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E368FADF1E504B680092BCDC /* ToyGuay.xcdatamodel */,
+			);
+			currentVersion = E368FADF1E504B680092BCDC /* ToyGuay.xcdatamodel */;
+			path = ToyGuay.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		E381C2451E33D84600560457 /* toyguay_iOS.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

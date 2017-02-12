@@ -1,0 +1,6 @@
+framework module Pods_toyguay_iOS {
+  umbrella header "Pods-toyguay_iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

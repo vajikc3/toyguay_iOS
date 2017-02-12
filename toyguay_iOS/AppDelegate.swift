@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        
+        FBSDKApplicationDelegate.sharedInstance().application(application,
+            didFinishLaunchingWithOptions:launchOptions)
+        
+        let tabBarController = UITabBarController()
+        let productsVC = ProductsViewController()
+        productsVC.tabBarItem = UITabBarItem(title: "Productos", image: nil, tag: 0)
+        let mapaVC = MapaViewController()
+        mapaVC.tabBarItem = UITabBarItem(title: "Mapa", image: nil, tag: 1)
+        let nuevoVC = NuevoViewController()
+        nuevoVC.tabBarItem = UITabBarItem(title: "Nuevo", image: nil, tag: 2)
+        let notifsVC = NotifsViewController()
+        notifsVC.tabBarItem = UITabBarItem(title: "Notificaciones", image: nil, tag: 3)
+        let perfilVC = PerfilViewController()
+        perfilVC.tabBarItem = UITabBarItem(title: "Perfil", image: nil, tag: 4)
+        
+        let vControllers = [productsVC, mapaVC, nuevoVC, notifsVC, perfilVC]
+        tabBarController.viewControllers = vControllers
+        window?.rootViewController = tabBarController
+        
+        // Create the rootVC
+//        let rootVC = LogInViewController()
+//        window?.rootViewController = rootVC
+        
+        // Display
+        window?.makeKeyAndVisible()
+        
+
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options [UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+        return handled
+    
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

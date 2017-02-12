@@ -1,0 +1,6 @@
+framework module Pods_toyguay_iOSUITests {
+  umbrella header "Pods-toyguay_iOSUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
