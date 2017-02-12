@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="toyCategories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ToyCategory" inverseName="category" inverseEntity="ToyCategory" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName=".Image" syncable="YES">
+        <attribute name="photoData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="toy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Toy" inverseName="images" inverseEntity="Toy" syncable="YES"/>
+    </entity>
+    <entity name="Search" representedClassName=".Search" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idUser" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="priceRange" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="radiusRange" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toyDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toyName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Toy" representedClassName=".Toy" syncable="YES">
+        <attribute name="decriptionText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Image" inverseName="toy" inverseEntity="Image" syncable="YES"/>
+        <relationship name="toyCategories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ToyCategory" inverseName="toy" inverseEntity="ToyCategory" syncable="YES"/>
+        <relationship name="transaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transaction" inverseName="toy" inverseEntity="Transaction" syncable="YES"/>
+    </entity>
+    <entity name="ToyCategory" representedClassName=".ToyCategory" syncable="YES">
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="category" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="toyCategories" inverseEntity="Category" syncable="YES"/>
+        <relationship name="toy" maxCount="1" deletionRule="Nullify" destinationEntity="Toy" inverseName="toyCategories" inverseEntity="Toy" syncable="YES"/>
+    </entity>
+    <entity name="Transaction" representedClassName=".Transaction" syncable="YES">
+        <attribute name="idUser" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="state" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <relationship name="toy" maxCount="1" deletionRule="Nullify" destinationEntity="Toy" inverseName="transaction" inverseEntity="Toy" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Toy" positionX="-405" positionY="-414" width="128" height="163"/>
+        <element name="Category" positionX="180" positionY="-279" width="128" height="75"/>
+        <element name="ToyCategory" positionX="-54" positionY="-279" width="128" height="90"/>
+        <element name="Image" positionX="-56" positionY="-480" width="128" height="75"/>
+        <element name="Transaction" positionX="-470" positionY="-78" width="128" height="105"/>
+        <element name="Search" positionX="-686" positionY="-342" width="128" height="135"/>
+    </elements>
 </model>

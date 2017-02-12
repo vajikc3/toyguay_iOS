@@ -28,19 +28,19 @@ class PerfilViewController: UIViewController {
         
         
       //  self.view.insertSubview(collectionView, at: 0)
-        soldToys = [
-            Toy(name:"train", description:"1 It is train"),
-            Toy(name:"dot_blue", description: "2 It is a dot"),
-            Toy(name:"dot_green", description: "3 It is a dot"),
-            Toy(name:"dot_pink", description: "4 It is a dot"),
-            Toy(name:"train", description:"5 It is train"),
-            Toy(name:"dot_blue", description: "6 It is a dot"),
-            Toy(name:"dot_green", description: "7 It is a dot"),
-            Toy(name:"dot_pink", description: "8 It is a dot")]
-        boughtToys = [
-            Toy(name:"dot_green", description: "3 It is a dot"),
-            Toy(name:"dot_pink", description: "4 It is a dot"),
-            Toy(name:"train", description:"5 It is train")]
+//        soldToys = [
+//            Toy(name:"train", description:"1 It is train"),
+//            Toy(name:"dot_blue", description: "2 It is a dot"),
+//            Toy(name:"dot_green", description: "3 It is a dot"),
+//            Toy(name:"dot_pink", description: "4 It is a dot"),
+//            Toy(name:"train", description:"5 It is train"),
+//            Toy(name:"dot_blue", description: "6 It is a dot"),
+//            Toy(name:"dot_green", description: "7 It is a dot"),
+//            Toy(name:"dot_pink", description: "8 It is a dot")]
+//        boughtToys = [
+//            Toy(name:"dot_green", description: "3 It is a dot"),
+//            Toy(name:"dot_pink", description: "4 It is a dot"),
+//            Toy(name:"train", description:"5 It is train")]
         self.collectionView.insertSubview(cv!, at: 0)
     }
     
@@ -124,7 +124,7 @@ extension PerfilViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ToyCollectionViewCell
-        cell.imageView.image = UIImage.init(named: self.toys[indexPath.row].name)
+        cell.imageView.image = UIImage.init(named: self.toys[indexPath.row].name!)
         //  cell.imageView.image = UIImage.init(named: "train")
         return cell
     }
