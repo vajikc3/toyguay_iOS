@@ -42,8 +42,12 @@ class LoginDownloadable: Downloadable {
             self.execSecureTask(request: request)  { (finishDone, responseObject) in
                 
                 if finishDone == true {
-                    print("login")
-                    taskCallback(true, nil)
+                    if let completeJSON:[String:Any?] = responseObject as? [String:Any?] {
+                        if let token:String = completeJSON["token"] as? String {
+                            print(token)
+                            taskCallback(true, token)
+                        }
+                    }
                 }else {
                     taskCallback(false, nil)
                 }

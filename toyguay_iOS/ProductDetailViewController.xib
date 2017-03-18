@@ -14,6 +14,7 @@
                 <outlet property="dateLabel" destination="473-hu-RQr" id="rCz-8H-lF0"/>
                 <outlet property="deleteProductAction" destination="Dva-Og-Zw3" id="gxt-0C-Uhp"/>
                 <outlet property="deleteProductButton" destination="Dva-Og-Zw3" id="yYb-sa-jps"/>
+                <outlet property="mapView" destination="Vlu-4x-F1W" id="dqQ-6i-JZN"/>
                 <outlet property="navBar" destination="VNM-xf-r6k" id="JgE-xz-of7"/>
                 <outlet property="priceLabel" destination="UjY-Bg-p1G" id="A1d-gk-rJy"/>
                 <outlet property="productDescriptionLabel" destination="elG-iv-kdR" id="Yvb-xb-CzT"/>
@@ -36,7 +37,11 @@
                     </constraints>
                     <items>
                         <navigationItem title="Title" id="1Se-q1-7WJ">
-                            <barButtonItem key="leftBarButtonItem" title="&lt;" id="2U6-x8-Qfv"/>
+                            <barButtonItem key="leftBarButtonItem" title="Back" id="oPA-SH-wsJ">
+                                <connections>
+                                    <action selector="goBackAction:" destination="-1" id="Dtx-m2-bFZ"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" systemItem="action" id="j58-Qq-IRA"/>
                         </navigationItem>
                     </items>

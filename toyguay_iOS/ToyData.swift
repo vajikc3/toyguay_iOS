@@ -15,4 +15,8 @@ struct ToyData {
     let price:Float?
     let categories:[String]?
     let image:[String]?
+    let nickname:String?
+    let creationDate:String?
+    let location:[Float]?
+    let state:String?
 }

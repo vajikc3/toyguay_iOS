@@ -51,13 +51,13 @@ class NuevoViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func acceptButton(_ sender: Any) {
         let toyUploadable = ToyUploadable()
         var catString = ""
-        if (self.selectedCategories?.count)! > 0 {
-            for cat in self.selectedCategories! {
-                catString.append(cat + ",")
-            }
-            catString.remove(at: catString.index(before: catString.endIndex))
-        }
-        toyUploadable.setData(name: self.titleTextField.text!, description: self.descriptionTextField.text!, price: ((self.priceTextField.text as? NSString)?.floatValue)!, categories: catString)
+//        if (self.selectedCategories?.count)! > 0 {
+//            for cat in self.selectedCategories! {
+//                catString.append(cat + ",")
+//            }
+//            catString.remove(at: catString.index(before: catString.endIndex))
+//        }
+        toyUploadable.setData(name: self.titleTextField.text!, description: self.descriptionTextField.text!, price: ((self.priceTextField.text as? NSString)?.floatValue)!, categories: self.selectedCategories!)
         toyUploadable.postNewToy(taskCallback: { (ok, error) in
             if ok {
                 DispatchQueue.main.async {

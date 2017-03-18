@@ -30,7 +30,8 @@ class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
         let loginDownloadable = LoginDownloadable()
         loginDownloadable.setData(username: username.text ?? "", password: password.text ?? "")
         loginDownloadable.postLogin { (ok: Bool, token: String?) in
-            if ok, let token = token {
+            print(token)
+            if ok {
                 User.usuario = User()
                 User.usuario?.nombre = loginDownloadable.username
                 User.usuario?.token = token

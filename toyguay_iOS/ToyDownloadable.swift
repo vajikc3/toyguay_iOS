@@ -64,8 +64,13 @@ class ToysDownloadable: Downloadable {
         let price: Float? = self.fill( dictionary: dictionary, withKey: "price")
         let categories: [String]? = self.fill( dictionary: dictionary, withKey: "categories")
         let image: [String]? = self.fill(dictionary: dictionary, withKey: "imageURL")
+        let user: [String: Any?]? = self.fill(dictionary: dictionary, withKey: "seller")
+        let nickname: String? = self.fill(dictionary: user!, withKey: "nick_name")
+        let creationDate: String? = self.fill(dictionary: user!, withKey: "createdAt")
+        let location: [Float]? = self.fill(dictionary: dictionary, withKey: "location")
+        let state: String? = self.fill(dictionary: dictionary, withKey: "state")
         
-        let currentToy:ToyData = ToyData(name: name, description: description, price: price, categories: categories, image: image)
+        let currentToy:ToyData = ToyData(name: name, description: description, price: price, categories: categories, image: image, nickname: nickname, creationDate: creationDate, location: location, state: state)
         print(currentToy)
         return currentToy
     }

@@ -23,14 +23,23 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var productDescriptionLabel: UILabel!
     @IBOutlet weak var deleteProductButton: UIButton!
     
+    @IBOutlet weak var mapView: MKMapView!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         self.productTitleLable.text = product?.name ?? ""
-        self.productDescriptionLabel.text = product?.descriptionText ?? ""
+        self.productDescriptionLabel.text = product?.description ?? ""
         self.priceLabel.text = "\(product?.price)"
-        
-        
-        
+//        self.userNameLabel.text = product?.nickname
+//        self.stateLabel.text = product?.state
+//        let annotation: MKPointAnnotation = MKPointAnnotation()
+//        if let latitude: Double = Double((product?.location?[0])!), let longitude: Double = Double((product?.location?[1])!) {
+//            annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//            self.mapView.addAnnotation(annotation)
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +47,10 @@ class ProductDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goBackAction(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
 
     @IBOutlet weak var deleteProductAction: UIButton!
     /*
