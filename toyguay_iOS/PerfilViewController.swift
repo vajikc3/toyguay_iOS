@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PerfilViewController: UIViewController {
     
@@ -16,55 +17,49 @@ class PerfilViewController: UIViewController {
     var gridCollectionView: UICollectionView!
     var gridLayout: GridLayout!
     
+    let sameOne = CoreDataStack.defaultStack(modelName: "toyguay_iOS")!
+    
     var toys = [Toy]()
-    var boughtToys = [Toy]()
-    var soldToys = [Toy]()
+    var notifications = [String]()
 
-
+    var cv: UICollectionView!
+    var searchTV: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.implementGridLayout()
-        let cv = gridCollectionView
         
         
-      //  self.view.insertSubview(collectionView, at: 0)
-//        soldToys = [
-//            Toy(name:"train", description:"1 It is train"),
-//            Toy(name:"dot_blue", description: "2 It is a dot"),
-//            Toy(name:"dot_green", description: "3 It is a dot"),
-//            Toy(name:"dot_pink", description: "4 It is a dot"),
-//            Toy(name:"train", description:"5 It is train"),
-//            Toy(name:"dot_blue", description: "6 It is a dot"),
-//            Toy(name:"dot_green", description: "7 It is a dot"),
-//            Toy(name:"dot_pink", description: "8 It is a dot")]
-//        boughtToys = [
-//            Toy(name:"dot_green", description: "3 It is a dot"),
-//            Toy(name:"dot_pink", description: "4 It is a dot"),
-//            Toy(name:"train", description:"5 It is train")]
-        self.collectionView.insertSubview(cv!, at: 0)
+        let fr = NSFetchRequest<Toy>(entityName: Toy.entityName)
+        fr.sortDescriptors = [(NSSortDescriptor(key: "name", ascending: true))]
+        toys = try! sameOne.context.fetch(fr)
+        
+        cv = gridCollectionView
+        self.implementTableView()
+        self.collectionView.insertSubview(searchTV, at: 0)
+        self.collectionView.insertSubview(cv, aboveSubview: searchTV)
+        
+
     }
     
     
     @IBAction func newOptionSelected(_ sender: Any) {
         if segmentedCtrl.selectedSegmentIndex == 0 {
-            toys = soldToys
-            gridCollectionView.reloadData()
+            self.gridCollectionView.sendSubview(toBack: searchTV)
         }
         if segmentedCtrl.selectedSegmentIndex == 1 {
-            
+            self.collectionView.sendSubview(toBack: searchTV)
         }
         if segmentedCtrl.selectedSegmentIndex == 2 {
-            let searchTV = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
-            searchTV.dataSource = self
-            searchTV.delegate = self
-            self.collectionView.addSubview(searchTV)
+            self.collectionView.sendSubview(toBack: cv)
         }
     }
 
     func implementGridLayout(){
         gridLayout = GridLayout()
         gridCollectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: gridLayout)
-        gridCollectionView.backgroundColor = UIColor.white
+        gridCollectionView.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 208/255, alpha: 1.0)
         gridCollectionView.showsVerticalScrollIndicator = false
         gridCollectionView.showsHorizontalScrollIndicator = false
         gridCollectionView!.register(ToyCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -73,12 +68,26 @@ class PerfilViewController: UIViewController {
         
     }
     
+    func implementTableView(){
+        
+        self.notifications = ["Juguete en venta en radio 1km", "juguete en venta de MartinB", "Juguete para donar en radio 2 km"]
+        searchTV = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
+        searchTV.dataSource = self
+        searchTV.delegate = self
+        var frame = gridCollectionView.frame
+        frame.size.height = self.view.frame.size.height
+        frame.size.width = self.view.frame.size.width - 85
+        frame.origin.x = 0
+        frame.origin.y = 0
+        searchTV.frame = frame
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         var frame = gridCollectionView.frame
-        frame.size.height = self.collectionView.frame.size.height
-        frame.size.width = self.collectionView.frame.size.width - 20
-        frame.origin.x = 10
+        frame.size.height = self.view.frame.size.height
+        frame.size.width = self.view.frame.size.width - 30
+        frame.origin.x = 0
         frame.origin.y = 0
         gridCollectionView.frame = frame
     }
@@ -125,6 +134,8 @@ extension PerfilViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ToyCollectionViewCell
         cell.imageView.image = UIImage.init(named: self.toys[indexPath.row].name!)
+        cell.descriptionLabel.text = self.toys[indexPath.row].name
+        cell.priceLabel.text = NSString(format: "%.2f", self.toys[indexPath.row].price) as String
         //  cell.imageView.image = UIImage.init(named: "train")
         return cell
     }
@@ -132,10 +143,10 @@ extension PerfilViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
 extension PerfilViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.toys.count > 50{
+        if self.notifications.count > 50{
             return 50
         } else{
-            return self.toys.count
+            return self.notifications.count
         }
     }
     
@@ -144,8 +155,11 @@ extension PerfilViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = toys[indexPath.row].name
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        if cell == nil{
+            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        }
+        cell?.textLabel?.text = notifications[indexPath.row]
         return cell!
     }
 }

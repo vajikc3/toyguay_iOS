@@ -17,6 +17,7 @@ extension Category {
     }
 
     @NSManaged public var name: String?
+    @NSManaged public var proxyForSorting: String?
     @NSManaged public var toyCategories: NSSet?
 
 }

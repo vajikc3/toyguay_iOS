@@ -17,14 +17,30 @@ class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.trainAnimation()
+        if User.loggedUser() != nil {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     
     // MARK: Custom Login
     
     @IBAction func customLogIn(_ sender: Any) {
-        print("User \(username.text)")
-        print("Password \(password.text)")
+        
+        let loginDownloadable = LoginDownloadable()
+        loginDownloadable.setData(username: username.text ?? "", password: password.text ?? "")
+        loginDownloadable.postLogin { (ok: Bool, token: String?) in
+            if ok, let token = token {
+                User.usuario = User()
+                User.usuario?.nombre = loginDownloadable.username
+                User.usuario?.token = token
+                print("login")
+                DispatchQueue.main.async {
+                   self.dismiss(animated: true, completion: nil)
+                }
+
+            }
+        }
     }
     
     
@@ -44,6 +60,9 @@ class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
             return
         } else {
             print("Successfully logged with Facebook")
+            if User.loggedUser() != nil {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
@@ -53,7 +72,8 @@ class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
      - Parameter loginButton: The button that was clicked.
      */
     public func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!){
-        
+        User.usuario = nil
+        self.dismiss(animated: true, completion: nil)
         print("Did log out of facebook")
     }
     

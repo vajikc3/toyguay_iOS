@@ -18,7 +18,7 @@ class ToyCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         contentView.layer.borderWidth = 1
         contentView.layer.borderColor = UIColor.darkGray.cgColor
-        contentView.layer.backgroundColor = UIColor.lightGray.cgColor
+        contentView.layer.backgroundColor = UIColor(red: 248/255, green: 229/255, blue: 190/255, alpha: 1.0).cgColor
         
         imageView = UIImageView()
         imageView.contentMode = .center
@@ -31,10 +31,9 @@ class ToyCollectionViewCell: UICollectionViewCell {
         descriptionLabel = UILabel()
         descriptionLabel.text = "Description..."
         descriptionLabel.font = descriptionLabel.font.withSize(11)
-        descriptionLabel.textColor = UIColor.darkGray
+        descriptionLabel.textColor = UIColor(red: 0, green: 128/255, blue: 0, alpha: 1.0)
         descriptionLabel.textAlignment = .left
         descriptionLabel.lineBreakMode = NSLineBreakMode.byTruncatingMiddle
-   //     descriptionLabel.backgroundColor = UIColor.white
         contentView.addSubview(descriptionLabel)
         
         priceLabel = UILabel()

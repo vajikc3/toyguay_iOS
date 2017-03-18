@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad12_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -11,15 +11,57 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductsViewController" customModule="toyguay_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="t15-Q2-mDm" id="INE-wY-Qgg"/>
+                <outlet property="pickerView" destination="rEK-0h-bfD" id="hqP-Xc-RoY"/>
+                <outlet property="searchBar" destination="fdT-a8-yaz" id="gfv-GC-9ct"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="P">
+            <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fdT-a8-yaz">
+                    <rect key="frame" x="0.0" y="0.0" width="1366" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="YAf-Mf-YNN"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t15-Q2-mDm" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="65" width="1366" height="959"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iPad BG " translatesAutoresizingMaskIntoConstraints="NO" id="eIk-oR-fju">
+                            <rect key="frame" x="0.0" y="0.0" width="1366" height="936"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEK-0h-bfD">
+                            <rect key="frame" x="0.0" y="743" width="1366" height="216"/>
+                        </pickerView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="rEK-0h-bfD" secondAttribute="trailing" id="8Kf-fD-RQH"/>
+                        <constraint firstAttribute="bottom" secondItem="rEK-0h-bfD" secondAttribute="bottom" id="sqQ-0N-xcM"/>
+                        <constraint firstItem="rEK-0h-bfD" firstAttribute="leading" secondItem="t15-Q2-mDm" secondAttribute="leading" id="zzy-hY-zlR"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="34.5" y="54.5"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="t15-Q2-mDm" secondAttribute="trailing" id="330-YV-obe"/>
+                <constraint firstAttribute="bottom" secondItem="t15-Q2-mDm" secondAttribute="bottom" id="EeR-QS-L8o"/>
+                <constraint firstItem="t15-Q2-mDm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ML1-28-yMr"/>
+                <constraint firstAttribute="trailing" secondItem="fdT-a8-yaz" secondAttribute="trailing" id="SjC-Np-ql7"/>
+                <constraint firstItem="fdT-a8-yaz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="a4x-ws-D5L"/>
+                <constraint firstItem="fdT-a8-yaz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ebW-rp-eKd"/>
+                <constraint firstItem="t15-Q2-mDm" firstAttribute="top" secondItem="fdT-a8-yaz" secondAttribute="bottom" id="zNm-gh-IwP"/>
+            </constraints>
+            <point key="canvasLocation" x="34" y="54"/>
         </view>
     </objects>
+    <resources>
+        <image name="iPad BG " width="1024" height="768"/>
+    </resources>
 </document>

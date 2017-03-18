@@ -27,9 +27,15 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerNewUser(_ sender: Any) {
+        let completeRegisterVC = CompleteRegisterViewController(nibName: nil, bundle: nil)
+        completeRegisterVC.name = self.nameTextField.text ?? ""
+        completeRegisterVC.password = self.passwordTextField.text ?? ""
+        completeRegisterVC.email = self.emailTextField.text ?? ""
+        self.show(completeRegisterVC, sender: nil)
     }
 
     @IBAction func escapeRegister(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*

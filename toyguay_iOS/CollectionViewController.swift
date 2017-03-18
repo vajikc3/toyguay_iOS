@@ -7,10 +7,29 @@
 //
 
 import UIKit
+import CoreData
 
 private let reuseIdentifier = "Cell"
 
-class CollectionViewController: UICollectionViewController {
+class CollectionViewController: CoreDataCollectionViewController {
+    
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+       
+    }
+    
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ToyCollectionViewCell
+        let toy = self.fetchedResultsController?.object(at: indexPath) as! Toy
+        cell.descriptionLabel.text = toy.name
+                //  cell.imageView.image = UIImage.init(named: "train")
+        return cell
+    }
+    
 //    
 //    var gridCollectionView: UICollectionView!
 //    var gridLayout: GridLayout!

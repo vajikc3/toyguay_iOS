@@ -17,7 +17,7 @@ extension Toy {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var decriptionText: String?
+    @NSManaged public var descriptionText: String?
     @NSManaged public var price: Float
     @NSManaged public var imageURL: String?
     @NSManaged public var userId: Int32

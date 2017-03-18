@@ -62,7 +62,7 @@ extension ToyCollectionView: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ToyCollectionViewCell
-        cell.imageView.image = UIImage.init(named: self.toys[indexPath.row].name)
+    //    cell.imageView.image = UIImage.init(named: self.toys[indexPath.row].name)
         //  cell.imageView.image = UIImage.init(named: "train")
         return cell
     }

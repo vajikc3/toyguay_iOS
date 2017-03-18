@@ -23,6 +23,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application,
             didFinishLaunchingWithOptions:launchOptions)
         
+        let sameOne = CoreDataStack.defaultStack(modelName: "toyguay_iOS")!
+    //    try! sameOne.dropAllData()
+        //Creación de juguetes de prueba
+//        _ = Toy(name: "Train", descriptionText: "tren bonito", imageURL: "", price: 10, userId: 1, inContext: (sameOne.context))
+//        _ = Toy(name: "Punto", descriptionText: "punto azul", imageURL: "", price: 45, userId: 1, inContext: (sameOne.context))
+//        
+//        sameOne.save()
+        
+        let toyService:ToyService = ToyService()
+        toyService.getToys { (status, toys) in
+            if let toysUnwrapped: [ToyData] = toys as [ToyData]? {
+                for toy in toysUnwrapped {
+                    let t = Toy(name: toy.name!, descriptionText: toy.description!, imageURL: toy.image![0], price: Float(toy.price!), userId: 1, inContext: (sameOne.context))
+                    print (t)
+                    sameOne.save()
+                }
+            }
+            
+        }
+    //    sameOne.save()
+
         let tabBarController = UITabBarController()
         let productsVC = ProductsViewController()
         productsVC.tabBarItem = UITabBarItem(title: "Productos", image: nil, tag: 0)
@@ -39,8 +60,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.viewControllers = vControllers
         window?.rootViewController = tabBarController
         
-        // Create the rootVC
-//        let rootVC = LogInViewController()
+//        let loginVC: LogInViewController = LogInViewController(nibName: nil, bundle: nil)
+//      //   Create the rootVC
+//        let rootVC = loginVC
 //        window?.rootViewController = rootVC
         
         // Display
