@@ -16,6 +16,7 @@ struct ToyData {
     let categories:[String]?
     let image:[String]?
     let nickname:String?
+    let userId:String?
     let creationDate:String?
     let location:[Float]?
     let state:String?

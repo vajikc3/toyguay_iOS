@@ -63,14 +63,19 @@ class ToysDownloadable: Downloadable {
         let description: String? = self.fill( dictionary: dictionary, withKey: "description")
         let price: Float? = self.fill( dictionary: dictionary, withKey: "price")
         let categories: [String]? = self.fill( dictionary: dictionary, withKey: "categories")
-        let image: [String]? = self.fill(dictionary: dictionary, withKey: "imageURL")
+        var image: [String]? = self.fill(dictionary: dictionary, withKey: "imageURL")
         let user: [String: Any?]? = self.fill(dictionary: dictionary, withKey: "seller")
         let nickname: String? = self.fill(dictionary: user!, withKey: "nick_name")
+        let userId: String? = self.fill(dictionary: user!, withKey: "_id")
+        print(userId)
         let creationDate: String? = self.fill(dictionary: user!, withKey: "createdAt")
         let location: [Float]? = self.fill(dictionary: dictionary, withKey: "location")
         let state: String? = self.fill(dictionary: dictionary, withKey: "state")
         
-        let currentToy:ToyData = ToyData(name: name, description: description, price: price, categories: categories, image: image, nickname: nickname, creationDate: creationDate, location: location, state: state)
+        if image?.count == 0 {
+            image?.append("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Juguetes-Tule-Oaxaca-Mexico.jpg/250px-Juguetes-Tule-Oaxaca-Mexico.jpg")
+        }
+        let currentToy:ToyData = ToyData(name: name, description: description, price: price, categories: categories, image: image, nickname: nickname, userId: userId, creationDate: creationDate, location: location, state: state)
         print(currentToy)
         return currentToy
     }

@@ -1,14 +1,14 @@
 //
-//  File.swift
+//  SearchUploadable.swift
 //  toyguay_iOS
 //
-//  Created by Verónica Cordobés on 17/3/17.
+//  Created by Verónica Cordobés on 20/3/17.
 //  Copyright © 2017 TheBardals. All rights reserved.
 //
 
 import Foundation
 
-class ToyUploadable: Downloadable {
+class SearchUploadable: Downloadable {
     var name: String?
     var description: String?
     var price: String?
@@ -31,7 +31,7 @@ class ToyUploadable: Downloadable {
         post_data.setValue(categories, forKey: "categories")
         
         var paramString = ""
- 
+        
         for (key, value) in post_data{
             paramString = paramString + (key as! String) + "=" + (value as! String) + "&"
         }

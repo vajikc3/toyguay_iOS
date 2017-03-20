@@ -54,6 +54,7 @@
 		E381C24C1E33D84600560457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E381C24A1E33D84600560457 /* LaunchScreen.storyboard */; };
 		E381C2571E33D84700560457 /* toyguay_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381C2561E33D84700560457 /* toyguay_iOSTests.swift */; };
 		E381C2621E33D84700560457 /* toyguay_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381C2611E33D84700560457 /* toyguay_iOSUITests.swift */; };
+		E39C88811E7FB2EC0091A1F0 /* SearchUploadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C88801E7FB2EC0091A1F0 /* SearchUploadable.swift */; };
 		E3B37A971E4F6D3600DD2B03 /* ToyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B37A961E4F6D3600DD2B03 /* ToyCollectionView.swift */; };
 		E3B6CCA11E74A4B200271A3B /* Downloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6CCA01E74A4B200271A3B /* Downloadable.swift */; };
 		E3B6CCA31E74A4EF00271A3B /* ToyDownloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6CCA21E74A4EF00271A3B /* ToyDownloadable.swift */; };
@@ -151,6 +152,7 @@
 		E381C25D1E33D84700560457 /* toyguay_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = toyguay_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E381C2611E33D84700560457 /* toyguay_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toyguay_iOSUITests.swift; sourceTree = "<group>"; };
 		E381C2631E33D84700560457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E39C88801E7FB2EC0091A1F0 /* SearchUploadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUploadable.swift; sourceTree = "<group>"; };
 		E3B37A961E4F6D3600DD2B03 /* ToyCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyCollectionView.swift; sourceTree = "<group>"; };
 		E3B6CCA01E74A4B200271A3B /* Downloadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloadable.swift; sourceTree = "<group>"; };
 		E3B6CCA21E74A4EF00271A3B /* ToyDownloadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyDownloadable.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				E3752D1A1E77297E00D44196 /* LoginDownloadable.swift */,
 				E37F2AD81E79C55D00F50243 /* RegisterDownloadable.swift */,
 				E3764BD91E7C89310014C1CD /* ToyUploadable.swift */,
+				E39C88801E7FB2EC0091A1F0 /* SearchUploadable.swift */,
 			);
 			name = api;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				E34439BB1E37692B00493600 /* SearchViewController.swift in Sources */,
 				E368FAF31E5072360092BCDC /* Transaction+CoreDataClass.swift in Sources */,
 				E368FAF51E5072360092BCDC /* ToyCategory+CoreDataClass.swift in Sources */,
+				E39C88811E7FB2EC0091A1F0 /* SearchUploadable.swift in Sources */,
 				E3B37A971E4F6D3600DD2B03 /* ToyCollectionView.swift in Sources */,
 				E3B6CCA71E74AC1700271A3B /* ToyService.swift in Sources */,
 				E35B2C1C1E4BBC6E00860E7E /* CollectionViewController.swift in Sources */,

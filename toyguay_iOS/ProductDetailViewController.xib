@@ -11,9 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailViewController" customModule="toyguay_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="adquirirProductoButton" destination="Wbl-7z-qvR" id="Cxj-NY-JYW"/>
+                <outlet property="bajaProductoButton" destination="gde-xt-MaS" id="UHg-d5-mZe"/>
                 <outlet property="dateLabel" destination="473-hu-RQr" id="rCz-8H-lF0"/>
-                <outlet property="deleteProductAction" destination="Dva-Og-Zw3" id="gxt-0C-Uhp"/>
-                <outlet property="deleteProductButton" destination="Dva-Og-Zw3" id="yYb-sa-jps"/>
                 <outlet property="mapView" destination="Vlu-4x-F1W" id="dqQ-6i-JZN"/>
                 <outlet property="navBar" destination="VNM-xf-r6k" id="JgE-xz-of7"/>
                 <outlet property="priceLabel" destination="UjY-Bg-p1G" id="A1d-gk-rJy"/>
@@ -125,39 +125,56 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KfF-Du-1IE" userLabel="Map View">
                             <rect key="frame" x="0.0" y="341" width="320" height="265"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dva-Og-Zw3">
-                                    <rect key="frame" x="0.0" y="205" width="320" height="60"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="60" id="sm4-R5-E0J"/>
-                                    </constraints>
-                                    <state key="normal" title="Button"/>
-                                </button>
                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Vlu-4x-F1W">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="205"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="265"/>
                                 </mapView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="Vlu-4x-F1W" firstAttribute="top" secondItem="KfF-Du-1IE" secondAttribute="top" id="0mz-4b-sD3"/>
-                                <constraint firstItem="Dva-Og-Zw3" firstAttribute="top" secondItem="Vlu-4x-F1W" secondAttribute="bottom" id="2kU-7D-0AV"/>
+                                <constraint firstAttribute="bottom" secondItem="Vlu-4x-F1W" secondAttribute="bottom" id="2Wg-l5-BzO"/>
                                 <constraint firstAttribute="height" constant="265" id="CoJ-ag-pgI"/>
-                                <constraint firstItem="Dva-Og-Zw3" firstAttribute="leading" secondItem="KfF-Du-1IE" secondAttribute="leading" id="U9I-SO-24c"/>
                                 <constraint firstItem="Vlu-4x-F1W" firstAttribute="leading" secondItem="KfF-Du-1IE" secondAttribute="leading" id="V3p-uz-27b"/>
-                                <constraint firstAttribute="bottom" secondItem="Dva-Og-Zw3" secondAttribute="bottom" id="aUL-fr-6Hr"/>
                                 <constraint firstAttribute="trailing" secondItem="Vlu-4x-F1W" secondAttribute="trailing" id="eym-5S-7u0"/>
-                                <constraint firstAttribute="trailing" secondItem="Dva-Og-Zw3" secondAttribute="trailing" id="wVu-Hz-2DN"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gde-xt-MaS" userLabel="Dar de baja">
+                            <rect key="frame" x="0.0" y="606" width="320" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="qqH-wm-ghH"/>
+                            </constraints>
+                            <state key="normal" title="Dar de baja"/>
+                            <connections>
+                                <action selector="bajaProductoAction:" destination="-1" eventType="touchUpInside" id="TE5-X3-ViP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbl-7z-qvR" userLabel="Adquirir">
+                            <rect key="frame" x="0.0" y="606" width="320" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="YzC-gC-8ru"/>
+                            </constraints>
+                            <state key="normal" title="Adquirir"/>
+                            <connections>
+                                <action selector="adquirirProductoAction:" destination="-1" eventType="touchUpInside" id="iqo-zP-zYO"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="Wbl-7z-qvR" firstAttribute="leading" secondItem="aDo-J0-WgX" secondAttribute="leading" id="20f-rK-ZSW"/>
                         <constraint firstItem="KfF-Du-1IE" firstAttribute="top" secondItem="YvY-SW-p9B" secondAttribute="bottom" id="2ed-mZ-dqZ"/>
                         <constraint firstItem="KfF-Du-1IE" firstAttribute="leading" secondItem="aDo-J0-WgX" secondAttribute="leading" id="2gk-fT-7jH"/>
-                        <constraint firstAttribute="bottom" secondItem="KfF-Du-1IE" secondAttribute="bottom" id="6sd-gu-qQh"/>
+                        <constraint firstItem="KfF-Du-1IE" firstAttribute="bottom" secondItem="gde-xt-MaS" secondAttribute="top" id="3Tm-zr-Jya"/>
                         <constraint firstItem="EZi-jy-F3J" firstAttribute="leading" secondItem="aDo-J0-WgX" secondAttribute="leading" id="8We-Id-jA2"/>
                         <constraint firstAttribute="trailing" secondItem="YvY-SW-p9B" secondAttribute="trailing" id="98u-0d-Lze"/>
+                        <constraint firstItem="gde-xt-MaS" firstAttribute="leading" secondItem="aDo-J0-WgX" secondAttribute="leading" id="CEJ-Jo-ZVM"/>
                         <constraint firstAttribute="trailing" secondItem="EZi-jy-F3J" secondAttribute="trailing" id="Ggm-hZ-7Ho"/>
+                        <constraint firstAttribute="bottom" secondItem="Wbl-7z-qvR" secondAttribute="bottom" id="Ndq-0F-v5h"/>
                         <constraint firstItem="YvY-SW-p9B" firstAttribute="leading" secondItem="aDo-J0-WgX" secondAttribute="leading" id="SsN-QB-s21"/>
+                        <constraint firstAttribute="bottom" secondItem="gde-xt-MaS" secondAttribute="bottom" id="Ucy-tf-Vyq"/>
                         <constraint firstItem="EZi-jy-F3J" firstAttribute="top" secondItem="aDo-J0-WgX" secondAttribute="top" id="WIg-US-noQ"/>
+                        <constraint firstAttribute="trailing" secondItem="Wbl-7z-qvR" secondAttribute="trailing" id="aTl-XW-uAm"/>
+                        <constraint firstAttribute="trailing" secondItem="gde-xt-MaS" secondAttribute="trailing" id="cA8-bH-KwM"/>
+                        <constraint firstItem="KfF-Du-1IE" firstAttribute="bottom" secondItem="Wbl-7z-qvR" secondAttribute="top" id="eve-Ok-0Dv"/>
                         <constraint firstItem="EZi-jy-F3J" firstAttribute="centerX" secondItem="aDo-J0-WgX" secondAttribute="centerX" id="g8t-7n-5Nd"/>
                         <constraint firstItem="YvY-SW-p9B" firstAttribute="top" secondItem="EZi-jy-F3J" secondAttribute="bottom" id="ihO-zU-gCW"/>
                         <constraint firstAttribute="trailing" secondItem="KfF-Du-1IE" secondAttribute="trailing" id="tB3-KO-oRS"/>

@@ -15,6 +15,8 @@ class NuevoViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var currencyTextField: UITextField!
     
+    @IBOutlet weak var bajaProductoButton: UIButton!
+    @IBOutlet weak var adquirirProductoButton: UIButton!
     let pickerView = UIPickerView()
     let currencies = ["€", "$", "£", "¥"]
     let categories = ["Deportes", "Exterior", "Muñecas", "Construcciones", "Bebé", "Lógica"]
@@ -32,7 +34,7 @@ class NuevoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.dataSource = self
         self.tableView.allowsMultipleSelection = true
         
-        self.selectedCategories = [""]
+        self.selectedCategories = []
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +43,9 @@ class NuevoViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let loginVC: LogInViewController = LogInViewController()
             self.tabBarController?.present(loginVC, animated: true, completion: nil)
         }
+        self.bajaProductoButton.isEnabled = false
+        self.bajaProductoButton.isHidden = true
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,13 +56,13 @@ class NuevoViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func acceptButton(_ sender: Any) {
         let toyUploadable = ToyUploadable()
         var catString = ""
-//        if (self.selectedCategories?.count)! > 0 {
-//            for cat in self.selectedCategories! {
-//                catString.append(cat + ",")
-//            }
-//            catString.remove(at: catString.index(before: catString.endIndex))
-//        }
-        toyUploadable.setData(name: self.titleTextField.text!, description: self.descriptionTextField.text!, price: ((self.priceTextField.text as? NSString)?.floatValue)!, categories: self.selectedCategories!)
+        if (self.selectedCategories?.count)! > 0 {
+            for cat in self.selectedCategories! {
+                catString.append(cat + ",")
+            }
+            catString.remove(at: catString.index(before: catString.endIndex))
+        }
+        toyUploadable.setData(name: self.titleTextField.text!, description: self.descriptionTextField.text!, price: self.priceTextField.text!, categories: catString)
         toyUploadable.postNewToy(taskCallback: { (ok, error) in
             if ok {
                 DispatchQueue.main.async {
@@ -79,7 +84,11 @@ class NuevoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.reloadData()
     }
     
+    @IBAction func bajaProducto(_ sender: Any) {
+    }
 
+    @IBAction func adquirirProducto(_ sender: Any) {
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.categories.count
     }

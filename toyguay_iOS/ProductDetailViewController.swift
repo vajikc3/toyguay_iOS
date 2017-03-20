@@ -21,11 +21,14 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var productTitleLable: UILabel!
     @IBOutlet weak var productDescriptionLabel: UILabel!
-    @IBOutlet weak var deleteProductButton: UIButton!
+
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var bajaProductoButton: UIButton!
 
+    @IBOutlet weak var adquirirProductoButton: UIButton!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,8 +54,14 @@ class ProductDetailViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
     }
+    
 
-    @IBOutlet weak var deleteProductAction: UIButton!
+    @IBAction func bajaProductoAction(_ sender: Any) {
+    }
+
+    @IBAction func adquirirProductoAction(_ sender: Any) {
+    }
+
     /*
     // MARK: - Navigation
 
