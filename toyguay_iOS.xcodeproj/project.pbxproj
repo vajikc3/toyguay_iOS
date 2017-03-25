@@ -23,7 +23,6 @@
 		E34439BC1E37692B00493600 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34439BA1E37692B00493600 /* SearchViewController.xib */; };
 		E35B2C1C1E4BBC6E00860E7E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B2C1A1E4BBC6E00860E7E /* CollectionViewController.swift */; };
 		E35B2C1D1E4BBC6E00860E7E /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E35B2C1B1E4BBC6E00860E7E /* CollectionViewController.xib */; };
-		E368FAE31E5070EB0092BCDC /* Toy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368FAE11E5070EB0092BCDC /* Toy+CoreDataClass.swift */; };
 		E368FAEF1E5072360092BCDC /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368FAE51E5072360092BCDC /* Image+CoreDataClass.swift */; };
 		E368FAF11E5072360092BCDC /* Search+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368FAE71E5072360092BCDC /* Search+CoreDataClass.swift */; };
 		E368FAF31E5072360092BCDC /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368FAE91E5072360092BCDC /* Transaction+CoreDataClass.swift */; };
@@ -32,7 +31,6 @@
 		E368FAFA1E5074F30092BCDC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368FAF91E5074F30092BCDC /* CoreDataStack.swift */; };
 		E368FAFD1E5075A70092BCDC /* CoreDataCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368FAFB1E5075A70092BCDC /* CoreDataCollectionViewController.swift */; };
 		E368FAFE1E5075A70092BCDC /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368FAFC1E5075A70092BCDC /* CoreDataTableViewController.swift */; };
-		E368FB111E507AF90092BCDC /* Toy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368FB0B1E507AF90092BCDC /* Toy+CoreDataProperties.swift */; };
 		E368FB121E507AF90092BCDC /* ToyCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368FB0C1E507AF90092BCDC /* ToyCategory+CoreDataProperties.swift */; };
 		E368FB131E507AF90092BCDC /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368FB0D1E507AF90092BCDC /* Image+CoreDataProperties.swift */; };
 		E368FB141E507AF90092BCDC /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368FB0E1E507AF90092BCDC /* Transaction+CoreDataProperties.swift */; };
@@ -55,6 +53,9 @@
 		E381C2571E33D84700560457 /* toyguay_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381C2561E33D84700560457 /* toyguay_iOSTests.swift */; };
 		E381C2621E33D84700560457 /* toyguay_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381C2611E33D84700560457 /* toyguay_iOSUITests.swift */; };
 		E39C88811E7FB2EC0091A1F0 /* SearchUploadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C88801E7FB2EC0091A1F0 /* SearchUploadable.swift */; };
+		E39C88951E8070290091A1F0 /* DeleteToy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C88941E8070290091A1F0 /* DeleteToy.swift */; };
+		E39C88981E8074CD0091A1F0 /* Toy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C88961E8074CD0091A1F0 /* Toy+CoreDataClass.swift */; };
+		E39C88991E8074CD0091A1F0 /* Toy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C88971E8074CD0091A1F0 /* Toy+CoreDataProperties.swift */; };
 		E3B37A971E4F6D3600DD2B03 /* ToyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B37A961E4F6D3600DD2B03 /* ToyCollectionView.swift */; };
 		E3B6CCA11E74A4B200271A3B /* Downloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6CCA01E74A4B200271A3B /* Downloadable.swift */; };
 		E3B6CCA31E74A4EF00271A3B /* ToyDownloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6CCA21E74A4EF00271A3B /* ToyDownloadable.swift */; };
@@ -115,7 +116,6 @@
 		E34439BA1E37692B00493600 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		E35B2C1A1E4BBC6E00860E7E /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E35B2C1B1E4BBC6E00860E7E /* CollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
-		E368FAE11E5070EB0092BCDC /* Toy+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Toy+CoreDataClass.swift"; path = "../Toy+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E368FAE51E5072360092BCDC /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+CoreDataClass.swift"; path = "../Image+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E368FAE71E5072360092BCDC /* Search+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Search+CoreDataClass.swift"; path = "../Search+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E368FAE91E5072360092BCDC /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Transaction+CoreDataClass.swift"; path = "../Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -124,7 +124,6 @@
 		E368FAF91E5074F30092BCDC /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		E368FAFB1E5075A70092BCDC /* CoreDataCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCollectionViewController.swift; sourceTree = "<group>"; };
 		E368FAFC1E5075A70092BCDC /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewController.swift; sourceTree = "<group>"; };
-		E368FB0B1E507AF90092BCDC /* Toy+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Toy+CoreDataProperties.swift"; path = "../Toy+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E368FB0C1E507AF90092BCDC /* ToyCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ToyCategory+CoreDataProperties.swift"; path = "../ToyCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E368FB0D1E507AF90092BCDC /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+CoreDataProperties.swift"; path = "../Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E368FB0E1E507AF90092BCDC /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Transaction+CoreDataProperties.swift"; path = "../Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -153,6 +152,9 @@
 		E381C2611E33D84700560457 /* toyguay_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toyguay_iOSUITests.swift; sourceTree = "<group>"; };
 		E381C2631E33D84700560457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E39C88801E7FB2EC0091A1F0 /* SearchUploadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUploadable.swift; sourceTree = "<group>"; };
+		E39C88941E8070290091A1F0 /* DeleteToy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteToy.swift; sourceTree = "<group>"; };
+		E39C88961E8074CD0091A1F0 /* Toy+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Toy+CoreDataClass.swift"; path = "../Toy+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E39C88971E8074CD0091A1F0 /* Toy+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Toy+CoreDataProperties.swift"; path = "../Toy+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E3B37A961E4F6D3600DD2B03 /* ToyCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyCollectionView.swift; sourceTree = "<group>"; };
 		E3B6CCA01E74A4B200271A3B /* Downloadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloadable.swift; sourceTree = "<group>"; };
 		E3B6CCA21E74A4EF00271A3B /* ToyDownloadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyDownloadable.swift; sourceTree = "<group>"; };
@@ -315,7 +317,7 @@
 		E368FADC1E504B260092BCDC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E368FAE11E5070EB0092BCDC /* Toy+CoreDataClass.swift */,
+				E39C88961E8074CD0091A1F0 /* Toy+CoreDataClass.swift */,
 				E368FAE51E5072360092BCDC /* Image+CoreDataClass.swift */,
 				E368FAE71E5072360092BCDC /* Search+CoreDataClass.swift */,
 				E368FAE91E5072360092BCDC /* Transaction+CoreDataClass.swift */,
@@ -328,7 +330,7 @@
 		E368FADD1E504B380092BCDC /* Properties */ = {
 			isa = PBXGroup;
 			children = (
-				E368FB0B1E507AF90092BCDC /* Toy+CoreDataProperties.swift */,
+				E39C88971E8074CD0091A1F0 /* Toy+CoreDataProperties.swift */,
 				E368FB0C1E507AF90092BCDC /* ToyCategory+CoreDataProperties.swift */,
 				E368FB0D1E507AF90092BCDC /* Image+CoreDataProperties.swift */,
 				E368FB0E1E507AF90092BCDC /* Transaction+CoreDataProperties.swift */,
@@ -350,6 +352,7 @@
 				E37F2AD81E79C55D00F50243 /* RegisterDownloadable.swift */,
 				E3764BD91E7C89310014C1CD /* ToyUploadable.swift */,
 				E39C88801E7FB2EC0091A1F0 /* SearchUploadable.swift */,
+				E39C88941E8070290091A1F0 /* DeleteToy.swift */,
 			);
 			name = api;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				E3ECFBD41E35097D00604344 /* LogInViewController.swift in Sources */,
 				E3243FA41E36176F00AC2921 /* RegisterViewController.swift in Sources */,
 				E3752D1B1E77297E00D44196 /* LoginDownloadable.swift in Sources */,
+				E39C88991E8074CD0091A1F0 /* Toy+CoreDataProperties.swift in Sources */,
 				E368FAFA1E5074F30092BCDC /* CoreDataStack.swift in Sources */,
 				E372E8CB1E789C9900D44375 /* User.swift in Sources */,
 				E34439B71E3767DB00493600 /* PerfilViewController.swift in Sources */,
@@ -741,12 +745,14 @@
 				E37F2AD91E79C55D00F50243 /* RegisterDownloadable.swift in Sources */,
 				E368FB151E507AF90092BCDC /* Search+CoreDataProperties.swift in Sources */,
 				E37F2ADE1E79CBD000F50243 /* CompleteRegisterViewController.swift in Sources */,
+				E39C88951E8070290091A1F0 /* DeleteToy.swift in Sources */,
 				E368FB121E507AF90092BCDC /* ToyCategory+CoreDataProperties.swift in Sources */,
 				E3C41F851E37787900DD5975 /* ProductsViewController.swift in Sources */,
 				E368FAFE1E5075A70092BCDC /* CoreDataTableViewController.swift in Sources */,
 				E381C2471E33D84600560457 /* toyguay_iOS.xcdatamodeld in Sources */,
 				E368FB141E507AF90092BCDC /* Transaction+CoreDataProperties.swift in Sources */,
 				E3C41F881E377AA000DD5975 /* GridLayout.swift in Sources */,
+				E39C88981E8074CD0091A1F0 /* Toy+CoreDataClass.swift in Sources */,
 				E33973A21E7D112400EEF5E3 /* ProductDetailViewController.swift in Sources */,
 				E3B6CCA51E74A8EC00271A3B /* ToyData.swift in Sources */,
 				E3B6CCA31E74A4EF00271A3B /* ToyDownloadable.swift in Sources */,
@@ -754,8 +760,6 @@
 				E37096F61E3D4D1A0097F7CA /* FilterTableViewController.swift in Sources */,
 				E34439B31E3767CE00493600 /* NotifsViewController.swift in Sources */,
 				E381C2411E33D84600560457 /* ViewController.swift in Sources */,
-				E368FAE31E5070EB0092BCDC /* Toy+CoreDataClass.swift in Sources */,
-				E368FB111E507AF90092BCDC /* Toy+CoreDataProperties.swift in Sources */,
 				E3764BDA1E7C89310014C1CD /* ToyUploadable.swift in Sources */,
 				E381C23F1E33D84600560457 /* AppDelegate.swift in Sources */,
 				E368FAEF1E5072360092BCDC /* Image+CoreDataClass.swift in Sources */,

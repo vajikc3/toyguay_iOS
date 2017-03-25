@@ -13,6 +13,8 @@ class CompleteRegisterViewController: UIViewController {
     var name: String?
     var email: String?
     var password: String?
+    var latitude: String?
+    var longitude: String?
 
     @IBOutlet weak var provinciaTF: UITextField!
     @IBOutlet weak var poblacionTF: UITextField!
@@ -30,14 +32,16 @@ class CompleteRegisterViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
 
-        nameTF.text = name ?? ""
+        nameTF.text = self.name ?? ""
         passwordTF.text = password ?? ""
         emailTF.text = email ?? ""
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setLocation(latitude: Double, longitude: Double) {
+        self.latitude = String(format: "%f", latitude)
+        self.longitude = String(format: "%f", longitude)
+        print(latitude)
     }
     
     @IBAction func registerNewUser(_ sender: Any) {
@@ -48,6 +52,8 @@ class CompleteRegisterViewController: UIViewController {
                                      username: userTF.text ?? "",
                                      password: passwordTF.text ?? "",
                                      rPassword: rPasswordTF.text ?? "",
+                                     latitude: latitude ?? "",
+                                     longitude: longitude ?? "",
                                      city: poblacionTF.text ?? "",
                                      province: provinciaTF.text ?? "",
                                      country: "Spain")

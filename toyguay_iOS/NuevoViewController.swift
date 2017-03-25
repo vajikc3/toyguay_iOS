@@ -8,15 +8,22 @@
 
 import UIKit
 
-class NuevoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var currencyTextField: UITextField!
     
-    @IBOutlet weak var bajaProductoButton: UIButton!
-    @IBOutlet weak var adquirirProductoButton: UIButton!
+    @IBOutlet weak var photo0Button: UIButton!
+    
+    @IBOutlet weak var photo1Button: UIButton!
+    
+    @IBOutlet weak var photo2Button: UIButton!
+    
+    @IBOutlet weak var photo0ImageView: UIImageView!
+    let imagePicker = UIImagePickerController()
+    
     let pickerView = UIPickerView()
     let currencies = ["€", "$", "£", "¥"]
     let categories = ["Deportes", "Exterior", "Muñecas", "Construcciones", "Bebé", "Lógica"]
@@ -27,6 +34,7 @@ class NuevoViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imagePicker.delegate = self
         pickerView.delegate = self
         currencyTextField.inputView = pickerView
         
@@ -43,8 +51,6 @@ class NuevoViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let loginVC: LogInViewController = LogInViewController()
             self.tabBarController?.present(loginVC, animated: true, completion: nil)
         }
-        self.bajaProductoButton.isEnabled = false
-        self.bajaProductoButton.isHidden = true
 
     }
 
@@ -84,11 +90,37 @@ class NuevoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.reloadData()
     }
     
-    @IBAction func bajaProducto(_ sender: Any) {
+    @IBAction func takePicture(_ sender: Any) {
+        imagePicker.allowsEditing = false
+        
+        let picker = UIImagePickerController()
+        
+        if UIImagePickerController.isCameraDeviceAvailable(.rear){
+            picker.sourceType = .camera
+        }else{
+            picker.sourceType = .photoLibrary
+        }
+    
+        
+        picker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
     }
-
-    @IBAction func adquirirProducto(_ sender: Any) {
+    
+     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            photo0ImageView.contentMode = .scaleAspectFill
+            self.view.bringSubview(toFront: photo0ImageView)
+            photo0ImageView.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.categories.count
     }
@@ -127,15 +159,7 @@ class NuevoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return false
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

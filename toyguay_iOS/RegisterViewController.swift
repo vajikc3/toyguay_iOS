@@ -7,23 +7,37 @@
 //
 
 import UIKit
+import CoreLocation
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    var locationManager: CLLocationManager!
     
+    var latitude: Double?
+    var longitude: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        locationManager = CLLocationManager()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+           
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0]
+        self.longitude = userLocation.coordinate.longitude;
+        self.latitude = userLocation.coordinate.latitude;
+    
     }
     
     @IBAction func registerNewUser(_ sender: Any) {
@@ -31,6 +45,7 @@ class RegisterViewController: UIViewController {
         completeRegisterVC.name = self.nameTextField.text ?? ""
         completeRegisterVC.password = self.passwordTextField.text ?? ""
         completeRegisterVC.email = self.emailTextField.text ?? ""
+        completeRegisterVC.setLocation(latitude: self.latitude ?? 0.0, longitude: self.longitude ?? 0.0)
         self.show(completeRegisterVC, sender: nil)
     }
 
@@ -38,14 +53,5 @@ class RegisterViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

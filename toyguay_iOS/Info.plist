@@ -45,6 +45,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Para que otros usuarios localicen tus productos</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Para que otros usuarios localicen tus productos</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Para que otros usuarios localicen tus productos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We need to show a picture of your toy</string>
 	<key>UILaunchStoryboardName</key>

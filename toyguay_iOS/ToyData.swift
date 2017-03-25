@@ -9,7 +9,7 @@
 import Foundation
 
 struct ToyData {
-    
+    let id:String?
     let name:String?
     let description:String?
     let price:Float?
@@ -17,7 +17,7 @@ struct ToyData {
     let image:[String]?
     let nickname:String?
     let userId:String?
-    let creationDate:String?
-    let location:[Float]?
+    let creationDate:Date?
+    let location:[Double]?
     let state:String?
 }

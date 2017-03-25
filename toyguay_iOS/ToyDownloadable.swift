@@ -58,7 +58,7 @@ class ToysDownloadable: Downloadable {
     }
     
     private func generateToyData(fromDictionary dictionary: [String: Any?]) -> ToyData? {
-        
+        let id: String? = self.fill(dictionary: dictionary, withKey: "_id")
         let name: String? = self.fill( dictionary: dictionary, withKey: "name")
         let description: String? = self.fill( dictionary: dictionary, withKey: "description")
         let price: Float? = self.fill( dictionary: dictionary, withKey: "price")
@@ -67,16 +67,24 @@ class ToysDownloadable: Downloadable {
         let user: [String: Any?]? = self.fill(dictionary: dictionary, withKey: "seller")
         let nickname: String? = self.fill(dictionary: user!, withKey: "nick_name")
         let userId: String? = self.fill(dictionary: user!, withKey: "_id")
-        print(userId)
-        let creationDate: String? = self.fill(dictionary: user!, withKey: "createdAt")
-        let location: [Float]? = self.fill(dictionary: dictionary, withKey: "location")
+        var creationDate: String? = self.fill(dictionary: dictionary, withKey: "createdAt")
+        let locationDict: [String: Any?]? = self.fill(dictionary: user!, withKey: "location")
+        var location: [Double]? = [0.0, 0.0]
+        
+        if locationDict == nil {
+            location = [0.0, 0.0]
+        } else {
+            location = self.fill(dictionary: locationDict!, withKey: "coordinates")
+        }
         let state: String? = self.fill(dictionary: dictionary, withKey: "state")
         
         if image?.count == 0 {
             image?.append("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Juguetes-Tule-Oaxaca-Mexico.jpg/250px-Juguetes-Tule-Oaxaca-Mexico.jpg")
         }
-        let currentToy:ToyData = ToyData(name: name, description: description, price: price, categories: categories, image: image, nickname: nickname, userId: userId, creationDate: creationDate, location: location, state: state)
-        print(currentToy)
+
+        print(creationDate)
+        let currentToy:ToyData = ToyData(id: id, name: name, description: description, price: price, categories: categories, image: image, nickname: nickname, userId: userId, creationDate: Date(), location: location, state: state)
+
         return currentToy
     }
     

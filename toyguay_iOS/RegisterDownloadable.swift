@@ -16,6 +16,8 @@ class RegisterDownloadable: Downloadable {
     var username: String?
     var password: String?
     var rPassword: String?
+    var latitude: String?
+    var longitude: String?
     var city: String?
     var province: String?
     var country: String?
@@ -37,6 +39,8 @@ class RegisterDownloadable: Downloadable {
         post_data.setValue(username, forKey: "user")
         post_data.setValue(password, forKey: "password")
         post_data.setValue(rPassword, forKey: "password_repeat")
+        post_data.setValue(latitude, forKey: "latitude")
+        post_data.setValue(longitude, forKey: "longitude")
         post_data.setValue(city, forKey: "city")
         post_data.setValue(province, forKey: "province")
         post_data.setValue(country, forKey: "country")
@@ -82,6 +86,8 @@ class RegisterDownloadable: Downloadable {
                  username: String,
                  password: String,
                  rPassword: String,
+                 latitude: String,
+                 longitude: String,
                  city: String,
                  province: String,
                  country: String){
@@ -91,6 +97,8 @@ class RegisterDownloadable: Downloadable {
         self.username = username
         self.password = password
         self.rPassword = rPassword
+        self.latitude = latitude
+        self.longitude = longitude
         self.city = city
         self.province = province
         self.country = country

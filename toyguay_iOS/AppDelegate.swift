@@ -35,8 +35,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         toyService.getToys { (status, toys) in
             if let toysUnwrapped: [ToyData] = toys as [ToyData]? {
                 for toy in toysUnwrapped {
-                    let t = Toy(name: toy.name!, descriptionText: toy.description!, imageURL: toy.image![0], price: Float(toy.price!), userId: 1, inContext: (sameOne.context))
-                    print (t)
+                    print(toy.creationDate)
+                    let t = Toy(id: toy.id!, name: toy.name!, descriptionText: toy.description!, imageURL: toy.image![0], price: Float(toy.price!), userId: toy.userId!, createdDate: toy.creationDate!, latitude: (toy.location?[0])!, longitude: (toy.location?[1])!, state: toy.state!, username: toy.nickname!, inContext: (sameOne.context))
+
+//                    } else {
+//                        let date = "\(Date())"
+//                        let t = Toy(id: toy.id!, name: toy.name!, descriptionText: toy.description!, imageURL: toy.image![0], price: Float(toy.price!), userId: toy.userId!, createdDate: dateFormatter.date(from: date)!, latitude: (toy.location?[0])!, longitude: (toy.location?[1])!, state: toy.state!, username: toy.nickname!, inContext: (sameOne.context))
+//
+//                    }
                     sameOne.save()
                 }
             }

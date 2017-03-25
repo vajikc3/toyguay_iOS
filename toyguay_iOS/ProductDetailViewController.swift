@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 class ProductDetailViewController: UIViewController {
     
@@ -28,21 +29,34 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var bajaProductoButton: UIButton!
 
     @IBOutlet weak var adquirirProductoButton: UIButton!
+    
+    let sameOne = CoreDataStack.defaultStack(modelName: "toyguay_iOS")!
    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.productTitleLable.text = product?.name ?? ""
-        self.productDescriptionLabel.text = product?.description ?? ""
-        self.priceLabel.text = "\(product?.price)"
-//        self.userNameLabel.text = product?.nickname
-//        self.stateLabel.text = product?.state
-//        let annotation: MKPointAnnotation = MKPointAnnotation()
-//        if let latitude: Double = Double((product?.location?[0])!), let longitude: Double = Double((product?.location?[1])!) {
-//            annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-//            self.mapView.addAnnotation(annotation)
-//        }
+        self.productDescriptionLabel.text = String(format: "%@", (product?.descriptionText)!)
+        self.priceLabel.text = String(format: "%.2f€", (self.product?.price)!)
+        self.userNameLabel.text = product?.username
+        self.stateLabel.text = product?.state
+        self.dateLabel.text = "\(product?.createdDate)"
+        let annotation: MKPointAnnotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: Double((product?.latitude)!), longitude: Double((product?.longitude)!))
+        self.mapView.addAnnotation(annotation)
+        self.mapView.showAnnotations([annotation], animated: true)
+        
+        if (User.loggedUser() != nil) && (User.usuario?.nombre == product?.username){
+            self.bajaProductoButton.isEnabled = true
+            self.bajaProductoButton.isHidden = false
+            self.adquirirProductoButton.isHidden = true
+            self.adquirirProductoButton.isEnabled = false
+        } else {
+            self.bajaProductoButton.isEnabled = false
+            self.bajaProductoButton.isHidden = true
+            self.adquirirProductoButton.isHidden = false
+            self.adquirirProductoButton.isEnabled = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,9 +71,39 @@ class ProductDetailViewController: UIViewController {
     
 
     @IBAction func bajaProductoAction(_ sender: Any) {
+        let id = (self.product?.id!)!
+        let deleteToy = DeleteToy()
+        deleteToy.setToyToDelete(toy_id: id)
+        deleteToy.deleteToy { (ok: Bool) in
+            print("Borrado \(ok)")
+            if ok {
+                let fr = NSFetchRequest<Toy>(entityName: Toy.entityName)
+                fr.predicate = NSPredicate(format: "id == %@", id)
+                fr.sortDescriptors = [(NSSortDescriptor(key: "id", ascending: true))]
+                if let result = try? self.sameOne.context.fetch(fr) {
+                    for object in result {
+                        self.sameOne.context.delete(object)
+                        print("Borrado en Core Data")
+                    }
+                }
+            }
+        }
+
+        let fr = NSFetchRequest<Toy>(entityName: Toy.entityName)
+        fr.predicate = NSPredicate(format: "id == %@", (self.product?.id)!)
+        fr.sortDescriptors = [(NSSortDescriptor(key: "id", ascending: true))]
+        if let result = try? self.sameOne.context.fetch(fr) {
+            for object in result {
+                self.sameOne.context.delete(object)
+                print("Borrado en Core Data")
+            }
+        }
+        
+        self.sameOne.save()
     }
 
     @IBAction func adquirirProductoAction(_ sender: Any) {
+        
     }
 
     /*

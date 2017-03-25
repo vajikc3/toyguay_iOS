@@ -127,7 +127,6 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
                                 cell.imageView.contentMode = .scaleAspectFit
                                 cell.imageView.image = UIImage(data: imageData)
                             }
-                           //                            collectionView.reloadData()
                         } else {
                             print("Couldn't get image")
                         }

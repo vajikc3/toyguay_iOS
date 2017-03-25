@@ -2,7 +2,7 @@
 //  Toy+CoreDataProperties.swift
 //  toyguay_iOS
 //
-//  Created by Verónica Cordobés on 12/2/17.
+//  Created by Verónica Cordobés on 20/3/17.
 //  Copyright © 2017 TheBardals. All rights reserved.
 //
 
@@ -16,31 +16,20 @@ extension Toy {
         return NSFetchRequest<Toy>(entityName: "Toy");
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var descriptionText: String?
-    @NSManaged public var price: Float
     @NSManaged public var imageURL: String?
-    @NSManaged public var userId: Int32
-    @NSManaged public var toyCategories: NSSet?
+    @NSManaged public var name: String?
+    @NSManaged public var price: Float
+    @NSManaged public var userId: String?
+    @NSManaged public var createdDate: NSDate?
+    @NSManaged public var state: String?
+    @NSManaged public var username: String?
+    @NSManaged public var longitude: Double
+    @NSManaged public var latitude: Double
+    @NSManaged public var id: String?
     @NSManaged public var images: NSSet?
+    @NSManaged public var toyCategories: NSSet?
     @NSManaged public var transaction: Transaction?
-
-}
-
-// MARK: Generated accessors for toyCategories
-extension Toy {
-
-    @objc(addToyCategoriesObject:)
-    @NSManaged public func addToToyCategories(_ value: ToyCategory)
-
-    @objc(removeToyCategoriesObject:)
-    @NSManaged public func removeFromToyCategories(_ value: ToyCategory)
-
-    @objc(addToyCategories:)
-    @NSManaged public func addToToyCategories(_ values: NSSet)
-
-    @objc(removeToyCategories:)
-    @NSManaged public func removeFromToyCategories(_ values: NSSet)
 
 }
 
@@ -58,5 +47,22 @@ extension Toy {
 
     @objc(removeImages:)
     @NSManaged public func removeFromImages(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for toyCategories
+extension Toy {
+
+    @objc(addToyCategoriesObject:)
+    @NSManaged public func addToToyCategories(_ value: ToyCategory)
+
+    @objc(removeToyCategoriesObject:)
+    @NSManaged public func removeFromToyCategories(_ value: ToyCategory)
+
+    @objc(addToyCategories:)
+    @NSManaged public func addToToyCategories(_ values: NSSet)
+
+    @objc(removeToyCategories:)
+    @NSManaged public func removeFromToyCategories(_ values: NSSet)
 
 }
