@@ -62,6 +62,9 @@
 		E3B6CCA51E74A8EC00271A3B /* ToyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6CCA41E74A8EC00271A3B /* ToyData.swift */; };
 		E3B6CCA71E74AC1700271A3B /* ToyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6CCA61E74AC1700271A3B /* ToyService.swift */; };
 		E3B6CCA91E74AC4100271A3B /* ServiceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6CCA81E74AC4100271A3B /* ServiceStatus.swift */; };
+		E3BAC44B1E88120E0049DB7D /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BAC44A1E88120E0049DB7D /* libxml2.2.tbd */; };
+		E3BAC4531E882E280049DB7D /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BAC4521E882E280049DB7D /* MicrosoftAzureMobile.framework */; };
+		E3BAC4571E882E6E0049DB7D /* AZSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BAC4561E882E6E0049DB7D /* AZSClient.framework */; };
 		E3C41F811E37746800DD5975 /* ToyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C41F7F1E37746800DD5975 /* ToyCollectionViewCell.swift */; };
 		E3C41F821E37746800DD5975 /* ToyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C41F801E37746800DD5975 /* ToyCollectionViewCell.xib */; };
 		E3C41F851E37787900DD5975 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C41F831E37787900DD5975 /* ProductsViewController.swift */; };
@@ -161,6 +164,10 @@
 		E3B6CCA41E74A8EC00271A3B /* ToyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyData.swift; sourceTree = "<group>"; };
 		E3B6CCA61E74AC1700271A3B /* ToyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyService.swift; sourceTree = "<group>"; };
 		E3B6CCA81E74AC4100271A3B /* ServiceStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceStatus.swift; sourceTree = "<group>"; };
+		E3BAC4421E8810650049DB7D /* toyguay_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "toyguay_iOS-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		E3BAC44A1E88120E0049DB7D /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		E3BAC4521E882E280049DB7D /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
+		E3BAC4561E882E6E0049DB7D /* AZSClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AZSClient.framework; sourceTree = "<group>"; };
 		E3C41F7F1E37746800DD5975 /* ToyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyCollectionViewCell.swift; sourceTree = "<group>"; };
 		E3C41F801E37746800DD5975 /* ToyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToyCollectionViewCell.xib; sourceTree = "<group>"; };
 		E3C41F831E37787900DD5975 /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +188,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3BAC4571E882E6E0049DB7D /* AZSClient.framework in Frameworks */,
+				E3BAC44B1E88120E0049DB7D /* libxml2.2.tbd in Frameworks */,
+				E3BAC4531E882E280049DB7D /* MicrosoftAzureMobile.framework in Frameworks */,
 				E3ECFBCF1E3505E200604344 /* FBSDKCoreKit.framework in Frameworks */,
 				E3ECFBD11E3505E200604344 /* FBSDKShareKit.framework in Frameworks */,
 				E3ECFBD01E3505E200604344 /* FBSDKLoginKit.framework in Frameworks */,
@@ -221,6 +231,9 @@
 		C41BF27DD5092C622BFFF12F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E3BAC4561E882E6E0049DB7D /* AZSClient.framework */,
+				E3BAC44A1E88120E0049DB7D /* libxml2.2.tbd */,
+				E3BAC4521E882E280049DB7D /* MicrosoftAzureMobile.framework */,
 				E3ECFBCA1E3505E200604344 /* Bolts.framework */,
 				E3ECFBCB1E3505E200604344 /* FBSDKCoreKit.framework */,
 				E3ECFBCC1E3505E200604344 /* FBSDKLoginKit.framework */,
@@ -271,6 +284,7 @@
 				E381C2481E33D84600560457 /* Assets.xcassets */,
 				E381C24A1E33D84600560457 /* LaunchScreen.storyboard */,
 				E381C24D1E33D84600560457 /* Info.plist */,
+				E3BAC4421E8810650049DB7D /* toyguay_iOS-Bridging-Header.h */,
 			);
 			name = app;
 			sourceTree = "<group>";
@@ -497,6 +511,7 @@
 					E381C23A1E33D84600560457 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 6ST72RTMK9;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -918,6 +933,7 @@
 			baseConfigurationReference = 4DB30229A17984CD367B67F1 /* Pods-toyguay_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = toyguay_iOS/toyguay_iOS.entitlements;
 				DEVELOPMENT_TEAM = 6ST72RTMK9;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -928,6 +944,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TheBardals.toyguay-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "toyguay_iOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -937,6 +955,7 @@
 			baseConfigurationReference = D31CAAB3E93F39D002893E91 /* Pods-toyguay_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = toyguay_iOS/toyguay_iOS.entitlements;
 				DEVELOPMENT_TEAM = 6ST72RTMK9;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -947,6 +966,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TheBardals.toyguay-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "toyguay_iOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

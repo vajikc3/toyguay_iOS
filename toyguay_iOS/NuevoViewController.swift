@@ -22,6 +22,18 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var photo2Button: UIButton!
     
     @IBOutlet weak var photo0ImageView: UIImageView!
+    
+    var images: [String]?
+    
+    var blobId: String?
+    
+    var client: MSClient = MSClient(applicationURL: URL(string: "https://toyguay.blob.core.windows.nett")!)
+
+    var blobClient: AZSCloudBlobClient?
+    var container: AZSCloudBlobContainer?
+    var photoModel: [AZSCloudBlockBlob] = []
+    var blob: AZSCloudBlockBlob?
+    
     let imagePicker = UIImagePickerController()
     
     let pickerView = UIPickerView()
@@ -43,6 +55,9 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.tableView.allowsMultipleSelection = true
         
         self.selectedCategories = []
+        
+        self.newContainer("toyguay-image-container")
+        self.setupAzureClient()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,7 +83,7 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }
             catString.remove(at: catString.index(before: catString.endIndex))
         }
-        toyUploadable.setData(name: self.titleTextField.text!, description: self.descriptionTextField.text!, price: self.priceTextField.text!, categories: catString)
+        toyUploadable.setData(name: self.titleTextField.text!, description: self.descriptionTextField.text!, price: self.priceTextField.text!, categories: catString, images: images!)
         toyUploadable.postNewToy(taskCallback: { (ok, error) in
             if ok {
                 DispatchQueue.main.async {
@@ -112,6 +127,7 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             photo0ImageView.contentMode = .scaleAspectFill
             self.view.bringSubview(toFront: photo0ImageView)
             photo0ImageView.image = pickedImage
+            self.uploadBlob()
         }
         
         dismiss(animated: true, completion: nil)
@@ -120,6 +136,60 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    func setupAzureClient(){
+        do {
+            let credentials = AZSStorageCredentials(accountName: "toyguay",
+                                                    accountKey: "shwGPxWpIVvnxkcVmRz1p8JqOlcG7YXMpnXULTM8bsdT+kLe9dBuzQi2K+XnVCittjLf7/lWJfQj5FtyAlChOQ==")
+            let account = try AZSCloudStorageAccount(credentials: credentials, useHttps: true)
+            
+            blobClient = account.getBlobClient()
+            
+        } catch let error {
+            print(error)
+        }
+        
+    }
+
+    
+    func uploadBlob(){
+        self.blobId = UUID().uuidString
+        print("blobId \(blobId)")
+        let myBlob = container?.blockBlobReference(fromName: blobId!)
+        self.images?.append(self.blobId!)
+        myBlob?.upload(from: UIImageJPEGRepresentation(photo0ImageView.image!, 0.5)!, completionHandler: { (error) in
+            
+            if error != nil {
+                print(error)
+                return
+            }
+         //   self.images?.append(self.blobId!)
+            
+        })
+    }
+    
+    func newContainer(_ name: String) {
+        let blobContainer = blobClient?.containerReference(fromName: name.lowercased())
+        
+        blobContainer?.createContainerIfNotExists(with: AZSContainerPublicAccessType.container,
+                                                  requestOptions: nil,
+                                                  operationContext: nil,
+                                                  completionHandler: { (error, result) in
+                                                    
+                                                    if let _  = error {
+                                                        print(error)
+                                                        return
+                                                    }
+                                                    if result {
+                                                        print("Container creado")
+                                                    } else {
+                                                        print("Ya existe el container")
+                                                    }
+                                                    
+        })
+    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.categories.count

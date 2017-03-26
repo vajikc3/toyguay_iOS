@@ -13,6 +13,7 @@ class ToyUploadable: Downloadable {
     var description: String?
     var price: String?
     var categories: String?
+    var images: [String]?
     
     override init() {
         
@@ -29,6 +30,7 @@ class ToyUploadable: Downloadable {
         post_data.setValue(description, forKey: "description")
         post_data.setValue(price, forKey: "price")
         post_data.setValue(categories, forKey: "categories")
+        post_data.setValue(images, forKey:"imageURL")
         
         var paramString = ""
  
@@ -57,11 +59,12 @@ class ToyUploadable: Downloadable {
         }
     }
     
-    func setData(name: String, description: String, price: String, categories: String){
+    func setData(name: String, description: String, price: String, categories: String, images: [String]){
         self.name = name
         self.description = description
         self.price = price
         self.categories = categories
+        self.images = images
     }
     
     
