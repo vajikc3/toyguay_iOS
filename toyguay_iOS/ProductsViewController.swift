@@ -33,10 +33,9 @@ class ProductsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.implementGridLayout()
-        let fr = NSFetchRequest<Toy>(entityName: Toy.entityName)
-        fr.sortDescriptors = [(NSSortDescriptor(key: "name", ascending: true))]
-        toys = try! sameOne.context.fetch(fr)
-    
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ProductsViewController.refrescarCollectionView), name:  Notification.Name("myNotification"), object: nil)
+        self.cargarArray()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.allowsMultipleSelection = true
@@ -45,6 +44,18 @@ class ProductsViewController: UIViewController {
         
         self.collectionContainerView.addSubview(collectionView)
         self.view.sendSubview(toBack: self.tableViewContainerView)
+    }
+    
+    func cargarArray(){
+        let fr = NSFetchRequest<Toy>(entityName: Toy.entityName)
+        fr.sortDescriptors = [(NSSortDescriptor(key: "name", ascending: true))]
+        toys = try! sameOne.context.fetch(fr)
+        
+    }
+    
+    func refrescarCollectionView() {
+        self.cargarArray()
+        self.collectionView.reloadData()
     }
     
     func implementGridLayout(){

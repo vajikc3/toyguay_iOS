@@ -23,11 +23,11 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet weak var photo0ImageView: UIImageView!
     
-    var images: [String]?
+    var images: [String]? = [String]()
     
     var blobId: String?
     
-    var client: MSClient = MSClient(applicationURL: URL(string: "https://toyguay.blob.core.windows.nett")!)
+    var client: MSClient = MSClient(applicationURL: URL(string: "https://toyguay.blob.core.windows.net")!)
 
     var blobClient: AZSCloudBlobClient?
     var container: AZSCloudBlobContainer?
@@ -56,8 +56,9 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         self.selectedCategories = []
         
-        self.newContainer("toyguay-image-container")
         self.setupAzureClient()
+        self.newContainer("toyguay-image-container")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,6 +88,9 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         toyUploadable.postNewToy(taskCallback: { (ok, error) in
             if ok {
                 DispatchQueue.main.async {
+                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                        appDelegate.refrescarDatos()
+                    }
                     self.alert(message: "Producto añadido a ToyGuay")
                 }
                 
@@ -164,7 +168,7 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
                 print(error)
                 return
             }
-         //   self.images?.append(self.blobId!)
+            self.images?.append(self.blobId!)
             
         })
     }

@@ -23,33 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application,
             didFinishLaunchingWithOptions:launchOptions)
         
-        let sameOne = CoreDataStack.defaultStack(modelName: "toyguay_iOS")!
-    //    try! sameOne.dropAllData()
-        //Creación de juguetes de prueba
-//        _ = Toy(name: "Train", descriptionText: "tren bonito", imageURL: "", price: 10, userId: 1, inContext: (sameOne.context))
-//        _ = Toy(name: "Punto", descriptionText: "punto azul", imageURL: "", price: 45, userId: 1, inContext: (sameOne.context))
-//        
-//        sameOne.save()
-        
-        let toyService:ToyService = ToyService()
-        toyService.getToys { (status, toys) in
-            if let toysUnwrapped: [ToyData] = toys as [ToyData]? {
-                for toy in toysUnwrapped {
-                    print(toy.creationDate)
-                    let t = Toy(id: toy.id!, name: toy.name!, descriptionText: toy.description!, imageURL: toy.image![0], price: Float(toy.price!), userId: toy.userId!, createdDate: toy.creationDate!, latitude: (toy.location?[0])!, longitude: (toy.location?[1])!, state: toy.state!, username: toy.nickname!, inContext: (sameOne.context))
-
-//                    } else {
-//                        let date = "\(Date())"
-//                        let t = Toy(id: toy.id!, name: toy.name!, descriptionText: toy.description!, imageURL: toy.image![0], price: Float(toy.price!), userId: toy.userId!, createdDate: dateFormatter.date(from: date)!, latitude: (toy.location?[0])!, longitude: (toy.location?[1])!, state: toy.state!, username: toy.nickname!, inContext: (sameOne.context))
-//
-//                    }
-                    sameOne.save()
-                }
-            }
-            
-        }
-    //    sameOne.save()
-
+        self.refrescarDatos()
         let tabBarController = UITabBarController()
         let productsVC = ProductsViewController()
         productsVC.tabBarItem = UITabBarItem(title: "Productos", image: nil, tag: 0)
@@ -152,6 +126,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    // MARK: - Custom
+    
+    func refrescarDatos(){
+        let sameOne = CoreDataStack.defaultStack(modelName: "toyguay_iOS")!
+        
+        
+        let toyService:ToyService = ToyService()
+        toyService.getToys { (status, toys) in
+            if let toysUnwrapped: [ToyData] = toys as [ToyData]? {
+                for toy in toysUnwrapped {
+                    print(toy.creationDate)
+                    let t = Toy(id: toy.id!, name: toy.name!, descriptionText: toy.description!, imageURL: toy.image![0], price: Float(toy.price!), userId: toy.userId!, createdDate: toy.creationDate!, latitude: (toy.location?[0])!, longitude: (toy.location?[1])!, state: toy.state!, username: toy.nickname!, inContext: (sameOne.context))
+                    
+                    
+                }
+                NotificationCenter.default.post(name: Notification.Name("myNotification"), object: nil)
+                sameOne.save()
+
+            }
+            
+        }
+
     }
 
 }
