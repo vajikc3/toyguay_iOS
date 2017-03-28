@@ -13,12 +13,11 @@ class ProductsViewController: UIViewController {
 
     var gridLayout: GridLayout!
 
- //   @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionContainerView: UIView!
     @IBOutlet weak var tableViewContainerView: UIView!
-    
     @IBOutlet weak var tableView: UITableView!
+    
     let sameOne = CoreDataStack.defaultStack(modelName: "toyguay_iOS")!
     var toys = [Toy]()
     var filteredToys = [Toy]()
@@ -29,6 +28,7 @@ class ProductsViewController: UIViewController {
     var selectedDistances:[String] = []
     
     var collectionView: UICollectionView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,28 +125,27 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ToyCollectionViewCell
-        if let url = URL(string: self.toys[indexPath.row].imageURL!) {
-            let session = URLSession(configuration: .default)
-            let downloadImgTask = session.dataTask(with: url) { (data, response, error) in
-                if let e = error {
-                    print("Error downloading img: \(e)")
-                } else {
-                    if let res = response as? HTTPURLResponse {
-                        if let imageData = data {
-                            
-                            DispatchQueue.main.async {
-                                cell.imageView.contentMode = .scaleAspectFit
-                                cell.imageView.image = UIImage(data: imageData)
-                            }
-                        } else {
-                            print("Couldn't get image")
-                        }
-                    } else {
-                        print("Couldn't get a response")
-                    }
-                }
+        let imageId: String = self.toys[indexPath.row].imageURL!
+        var client: MSClient = MSClient(applicationURL: URL(string: "https://toyguay.blob.core.windows.net")!)
+        let credentials = AZSStorageCredentials(accountName: "toyguay",
+                                                accountKey: "shwGPxWpIVvnxkcVmRz1p8JqOlcG7YXMpnXULTM8bsdT+kLe9dBuzQi2K+XnVCittjLf7/lWJfQj5FtyAlChOQ==")
+        let account = try! AZSCloudStorageAccount(credentials: credentials, useHttps: true)
+        let blobClient: AZSCloudBlobClient? = account.getBlobClient()
+        let container: AZSCloudBlobContainer? = AZSCloudBlobContainer(name: "toyguay-image-container", client: blobClient!)
+        let blob: AZSCloudBlockBlob? = AZSCloudBlockBlob(container: container!, name: imageId)
+        blob?.downloadToData { (error, data) in
+                
+        if let _ = error {
+            print(error)
+            return
+        }
+                
+        if let _ = data {
+            let img = UIImage(data: data!)
+            cell.imageView.image = img
+                print("Imagen ok")
             }
-            downloadImgTask.resume()
+                
         }
         
         cell.descriptionLabel.text = self.toys[indexPath.row].name
@@ -160,6 +159,7 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
         productDetailVC.product = self.toys[indexPath.row]
         self.tabBarController?.present(productDetailVC, animated: true, completion: nil)
     }
+    
 }
 
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
