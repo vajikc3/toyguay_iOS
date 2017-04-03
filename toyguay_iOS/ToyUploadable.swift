@@ -30,20 +30,19 @@ class ToyUploadable: Downloadable {
         post_data.setValue(description, forKey: "description")
         post_data.setValue(price, forKey: "price")
         post_data.setValue(categories, forKey: "categories")
-        post_data.setValue(images, forKey:"imageURL")
         
         var paramString = ""
  
         for (key, value) in post_data{
-            if let value = value as? [String] {
-                value.forEach({ (blobId: String) in
-                    paramString = paramString + (key as! String) + "=" + blobId + "&"
-                })
-            
-            }
-            else{
+//            if let value = value as? [String] {
+//                value.forEach({ (blobId: String) in
+//                    paramString = paramString + (key as! String) + "=" + blobId + "&"
+//                })
+//            
+//            }
+//            else{
             paramString = paramString + (key as! String) + "=" + (value as! String) + "&"
-            }
+         //   }
         }
         
         if let url:URL = self.postToyURL() {
@@ -55,8 +54,26 @@ class ToyUploadable: Downloadable {
             self.execSecureTask(request: request)  { (finishDone, responseObject) in
                 
                 if finishDone == true {
-                    print("toy uploaded")
-                    taskCallback(true, nil)
+                    
+                    if let completeJSON:[String:Any?] = responseObject as? [String:Any?] {
+                        if let json:[[String:Any?]] = completeJSON["toy"] as? [[String:Any?]] {
+                            var toy:[ToyData] = [ToyData]()
+                            print(toy)
+                            for element: [String: Any?] in json{
+                                for key in element.keys {
+                                    if key == "_id", let toyId = element[key] {
+                                        if (self.images?.count)! > 0 {
+                                            self.postImage(toyId: toyId as! String)
+                                        }
+                                        taskCallback(true, toyId as! String)
+                                    }
+                                }
+                            }
+                        }else {
+                            taskCallback(false, nil)
+                        }
+                    }
+                    
                 }else {
                     print("\(responseObject)")
                     taskCallback(false, nil)
@@ -80,6 +97,44 @@ class ToyUploadable: Downloadable {
         let token: String = User.usuario?.token ?? ""
         print("token: \(token)")
         return URL(string:  Config.kBaseURL + "/api/v1/toys?token=" + token)
+    }
+    
+    private func postImage(toyId: String) {
+        let url = self.postToyURL()
+        let paramString: String =  "url" + (images?[0])! + "&toyid=" + (toyId)
+        var request: URLRequest = URLRequest(url: url!, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 30)
+        request.httpMethod = "POST"
+        
+        request.httpBody = paramString.data(using: String.Encoding.utf8)
+        
+        self.execSecureTask(request: request)  { (finishDone, responseObject) in
+            
+            if finishDone == true {
+                print("url subida")
+                
+//                if let completeJSON:[String:Any?] = responseObject as? [String:Any?] {
+//                    if let json:[[String:Any?]] = completeJSON["toy"] as? [[String:Any?]] {
+//                        var toy:[ToyData] = [ToyData]()
+//                        print(toy)
+//                        for element: [String: Any?] in json{
+//                            for key in element.keys {
+//                                if key == "_id", let toyId = element[key] {
+//                                    if (self.images?.count)! > 0 {
+//                                        self.postImage(toyId)
+//                                    }
+//                                    taskCallback(true, toyId as! String)
+//                                }
+//                            }
+//                        }
+//                    }else {
+//                        taskCallback(false, nil)
+//                    }
+//                }
+                
+       
+            }
+        }
+        
     }
     
 }

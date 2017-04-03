@@ -36,8 +36,8 @@ class ProductDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.productTitleLable.text = product?.name ?? ""
-        self.productDescriptionLabel.text = String(format: "%@", (product?.descriptionText)!)
-        self.priceLabel.text = String(format: "%.2f€", (self.product?.price)!)
+        self.productDescriptionLabel.text = String(format: "%@", (product?.descriptionText) ?? "")
+        self.priceLabel.text = String(format: "%.2f€", (self.product?.price) ?? 0.0)
         self.userNameLabel.text = product?.username
         self.stateLabel.text = product?.state
         self.dateLabel.text = "\(product?.createdDate)"

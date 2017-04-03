@@ -84,14 +84,16 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }
             catString.remove(at: catString.index(before: catString.endIndex))
         }
-        toyUploadable.setData(name: self.titleTextField.text!, description: self.descriptionTextField.text!, price: self.priceTextField.text!, categories: catString, images: images!)
-        toyUploadable.postNewToy(taskCallback: { (ok, error) in
+        toyUploadable.setData(name: self.titleTextField.text!, description: self.descriptionTextField.text!, price: self.priceTextField.text!, categories: catString, images: self.images!)
+        toyUploadable.postNewToy(taskCallback: { (ok, toyId) in
             if ok {
                 DispatchQueue.main.async {
                     if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                         appDelegate.refrescarDatos()
                     }
+                    
                     self.alert(message: "Producto añadido a ToyGuay")
+                    print("response \(ok)")
                 }
                 
             } else {
@@ -122,7 +124,7 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
         
         picker.delegate = self
-        
+
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -158,18 +160,16 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
     
     func uploadBlob(){
-        self.blobId = UUID().uuidString
-        print("blobId \(blobId)")
+        container = (blobClient?.containerReference(fromName: "toyguay-image-container"))!
+        self.blobId = String(format: "%@.jpg", UUID().uuidString.lowercased())
+        self.images?.append(String(format: "https://toyguay.blob.core.windows.net/toyguay-image-container/%@", self.blobId!))
+        print("guardado en imágenes blob: %@ y tenemos count: %d", self.blobId, self.images?.count)
         let myBlob = container?.blockBlobReference(fromName: blobId!)
-        self.images?.append(self.blobId!)
         myBlob?.upload(from: UIImageJPEGRepresentation(photo0ImageView.image!, 0.5)!, completionHandler: { (error) in
-            
             if error != nil {
-                print(error)
+                print("error al subir blob")
                 return
             }
-            self.images?.append(self.blobId!)
-            
         })
     }
     

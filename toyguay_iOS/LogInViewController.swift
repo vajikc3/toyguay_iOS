@@ -16,7 +16,7 @@ class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.trainAnimation()
+  //      self.trainAnimation()
         if User.loggedUser() != nil {
             self.dismiss(animated: true, completion: nil)
         }
@@ -86,6 +86,15 @@ class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.present(rVC, animated: true)
     }
     
+    @IBAction func goBackAction(_ sender: Any) {
+
+        let alertController = UIAlertController(title: "Toyguay", message: "Debes ser usuario registrado para continuar", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+        
+
+    }
     
     // MARK: Animations
     

@@ -11,9 +11,14 @@ import CoreData
 
 class PerfilViewController: UIViewController {
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var collectionView: UIView!
     @IBOutlet weak var segmentedCtrl: UISegmentedControl!
-
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var comprasLabel: UILabel!
+    @IBOutlet weak var ventasLabel: UILabel!
+    @IBOutlet weak var localizationLabel: UILabel!
+    
     var gridCollectionView: UICollectionView!
     var gridLayout: GridLayout!
     
@@ -30,7 +35,6 @@ class PerfilViewController: UIViewController {
         
         self.implementGridLayout()
         
-        
         let fr = NSFetchRequest<Toy>(entityName: Toy.entityName)
         fr.sortDescriptors = [(NSSortDescriptor(key: "name", ascending: true))]
         toys = try! sameOne.context.fetch(fr)
@@ -42,6 +46,18 @@ class PerfilViewController: UIViewController {
         
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if User.loggedUser() == nil {
+            let loginVC: LogInViewController = LogInViewController()
+            self.tabBarController?.present(loginVC, animated: true, completion: nil)
+        } else {
+            self.userNameLabel.text = User.usuario?.nombre
+        }
+        
+    }
+
     
     
     @IBAction func newOptionSelected(_ sender: Any) {
@@ -74,19 +90,20 @@ class PerfilViewController: UIViewController {
         searchTV = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
         searchTV.dataSource = self
         searchTV.delegate = self
-        var frame = gridCollectionView.frame
-        frame.size.height = self.view.frame.size.height
-        frame.size.width = self.view.frame.size.width - 85
+        var frame = self.containerView.frame
+        frame.size.height = self.containerView.frame.size.height
+        frame.size.width = self.containerView.frame.size.width
         frame.origin.x = 0
         frame.origin.y = 0
         searchTV.frame = frame
+        searchTV.backgroundColor = UIColor.white
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        var frame = gridCollectionView.frame
-        frame.size.height = self.view.frame.size.height
-        frame.size.width = self.view.frame.size.width - 30
+        var frame = self.containerView.frame
+        frame.size.height = self.containerView.frame.size.height
+        frame.size.width = self.containerView.frame.size.width
         frame.origin.x = 0
         frame.origin.y = 0
         gridCollectionView.frame = frame
@@ -136,7 +153,6 @@ extension PerfilViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.imageView.image = UIImage.init(named: self.toys[indexPath.row].name!)
         cell.descriptionLabel.text = self.toys[indexPath.row].name
         cell.priceLabel.text = NSString(format: "%.2f", self.toys[indexPath.row].price) as String
-        //  cell.imageView.image = UIImage.init(named: "train")
         return cell
     }
 }

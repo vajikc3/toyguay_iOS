@@ -71,6 +71,14 @@ class CompleteRegisterViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func goBackAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func pickAvatarPhotoAction(_ sender: Any) {
+        
+    }
 }
 
 extension CompleteRegisterViewController {
