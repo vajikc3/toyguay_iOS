@@ -107,28 +107,7 @@ class ProductsViewController: UIViewController {
     }
     
     @IBAction func aceptarFiltros(_ sender: Any) {
-//        let searchUploadable = SearchUploadable()
-//        searchUploadable.setData(price: <#T##String#>, categories: <#T##String#>)
-//        searchUploadable.postNewToy(taskCallback: { (ok, toyId) in
-//            if ok {
-//                DispatchQueue.main.async {
-//                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-//                        appDelegate.refrescarDatos()
-//                        self.alert(message: "Producto añadido a ToyGuay")
-//                        print("response \(ok)")
-//                        self.cancelButton((Any).self)
-//                        self.tabBarController?.reloadInputViews()
-//                    }
-//                    
-//                    
-//                }
-//                
-//            } else {
-//                DispatchQueue.main.async {
-//                    self.alert(message: "No se ha podido añadir tu producto")
-//                }
-//            }
-//        })
+
     }
 }
 

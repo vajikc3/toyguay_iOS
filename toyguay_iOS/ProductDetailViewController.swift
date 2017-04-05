@@ -131,6 +131,11 @@ class ProductDetailViewController: UIViewController {
 
     @IBAction func adquirirProductoAction(_ sender: Any) {
         
+        let alertController = UIAlertController(title: "Petición enviada", message: "Avisaremos al propietario para que te contacte", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+
     }
 
 }
