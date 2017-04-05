@@ -20,6 +20,7 @@
                 <outlet property="productDescriptionLabel" destination="elG-iv-kdR" id="Yvb-xb-CzT"/>
                 <outlet property="productTitleLable" destination="ytA-HV-TO5" id="UEH-Nk-Qj5"/>
                 <outlet property="stateLabel" destination="y57-WT-jVx" id="uYc-DY-HdP"/>
+                <outlet property="toyImage" destination="Zg3-yN-f9B" id="NeB-ty-WOM"/>
                 <outlet property="userAvatarImageView" destination="u07-gf-UxO" id="VIj-Sx-Bgw"/>
                 <outlet property="userNameLabel" destination="gSp-Z6-arX" id="L06-tv-gj2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -76,7 +77,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YvY-SW-p9B" userLabel="Product Data View">
                             <rect key="frame" x="0.0" y="150" width="320" height="141"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u07-gf-UxO">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App Icon" translatesAutoresizingMaskIntoConstraints="NO" id="u07-gf-UxO">
                                     <rect key="frame" x="8" y="8" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="50" id="HKv-Ov-mYs"/>

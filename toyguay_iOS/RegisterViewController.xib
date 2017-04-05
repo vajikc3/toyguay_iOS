@@ -39,7 +39,7 @@
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j3a-6i-F1t">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j3a-6i-F1t">
                             <rect key="frame" x="24" y="96" width="282" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="lSf-cY-ULs"/>
@@ -98,6 +98,7 @@
                         <constraint firstItem="5gp-AX-z6u" firstAttribute="top" secondItem="j3a-6i-F1t" secondAttribute="bottom" constant="30" id="aEE-QE-Amh"/>
                         <constraint firstItem="ODB-g0-dxL" firstAttribute="leading" secondItem="a8l-HM-cnP" secondAttribute="leading" id="ctc-3U-H7H"/>
                         <constraint firstItem="ODB-g0-dxL" firstAttribute="top" secondItem="a8l-HM-cnP" secondAttribute="top" id="nMK-eZ-x8A"/>
+                        <constraint firstItem="j3a-6i-F1t" firstAttribute="centerX" secondItem="a8l-HM-cnP" secondAttribute="centerX" id="sGM-Ej-1wW"/>
                         <constraint firstItem="NOG-iZ-ozj" firstAttribute="centerX" secondItem="a8l-HM-cnP" secondAttribute="centerX" id="tCr-rU-FgN"/>
                     </constraints>
                 </view>

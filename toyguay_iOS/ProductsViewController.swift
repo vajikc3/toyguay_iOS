@@ -40,12 +40,15 @@ class ProductsViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.allowsMultipleSelection = true
         
- 
-        
         self.collectionContainerView.addSubview(collectionView)
         self.view.sendSubview(toBack: self.tableViewContainerView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.refrescarCollectionView()
+        
+    }
     func cargarArray(){
         let fr = NSFetchRequest<Toy>(entityName: Toy.entityName)
         fr.sortDescriptors = [(NSSortDescriptor(key: "name", ascending: true))]
@@ -104,8 +107,28 @@ class ProductsViewController: UIViewController {
     }
     
     @IBAction func aceptarFiltros(_ sender: Any) {
-        // postear la query
-        
+//        let searchUploadable = SearchUploadable()
+//        searchUploadable.setData(price: <#T##String#>, categories: <#T##String#>)
+//        searchUploadable.postNewToy(taskCallback: { (ok, toyId) in
+//            if ok {
+//                DispatchQueue.main.async {
+//                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+//                        appDelegate.refrescarDatos()
+//                        self.alert(message: "Producto añadido a ToyGuay")
+//                        print("response \(ok)")
+//                        self.cancelButton((Any).self)
+//                        self.tabBarController?.reloadInputViews()
+//                    }
+//                    
+//                    
+//                }
+//                
+//            } else {
+//                DispatchQueue.main.async {
+//                    self.alert(message: "No se ha podido añadir tu producto")
+//                }
+//            }
+//        })
     }
 }
 
@@ -113,8 +136,8 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.toys.count > 50{
             return 50
-        } else{
-            print(self.toys.count)
+        } else {
+
             return self.toys.count
         }
     }
@@ -227,7 +250,6 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
                     }
                 }
             }
-
         } else {
             if (self.selectedDistances.count) > 0 {
                 for index in 0...(self.selectedDistances.count) - 1 {

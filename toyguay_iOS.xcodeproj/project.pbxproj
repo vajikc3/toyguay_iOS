@@ -38,7 +38,6 @@
 		E37096F61E3D4D1A0097F7CA /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37096F41E3D4D1A0097F7CA /* FilterTableViewController.swift */; };
 		E37096F71E3D4D1A0097F7CA /* FilterTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E37096F51E3D4D1A0097F7CA /* FilterTableViewController.xib */; };
 		E372E8CB1E789C9900D44375 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372E8CA1E789C9900D44375 /* User.swift */; };
-		E3752D191E7727D700D44196 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3752D181E7727D700D44196 /* LoginService.swift */; };
 		E3752D1B1E77297E00D44196 /* LoginDownloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3752D1A1E77297E00D44196 /* LoginDownloadable.swift */; };
 		E3764BDA1E7C89310014C1CD /* ToyUploadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3764BD91E7C89310014C1CD /* ToyUploadable.swift */; };
 		E37F2AD91E79C55D00F50243 /* RegisterDownloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F2AD81E79C55D00F50243 /* RegisterDownloadable.swift */; };
@@ -46,7 +45,6 @@
 		E37F2ADF1E79CBD000F50243 /* CompleteRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E37F2ADD1E79CBD000F50243 /* CompleteRegisterViewController.xib */; };
 		E381C23F1E33D84600560457 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381C23E1E33D84600560457 /* AppDelegate.swift */; };
 		E381C2411E33D84600560457 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381C2401E33D84600560457 /* ViewController.swift */; };
-		E381C2441E33D84600560457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E381C2421E33D84600560457 /* Main.storyboard */; };
 		E381C2471E33D84600560457 /* toyguay_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E381C2451E33D84600560457 /* toyguay_iOS.xcdatamodeld */; };
 		E381C2491E33D84600560457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E381C2481E33D84600560457 /* Assets.xcassets */; };
 		E381C24C1E33D84600560457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E381C24A1E33D84600560457 /* LaunchScreen.storyboard */; };
@@ -63,6 +61,7 @@
 		E3B6CCA71E74AC1700271A3B /* ToyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6CCA61E74AC1700271A3B /* ToyService.swift */; };
 		E3B6CCA91E74AC4100271A3B /* ServiceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6CCA81E74AC4100271A3B /* ServiceStatus.swift */; };
 		E3B960FF1E89A21B000BB8CA /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B960FE1E89A21B000BB8CA /* Notifications.swift */; };
+		E3B9967A1E957F1E00E17E07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B996791E957F1E00E17E07 /* Main.storyboard */; };
 		E3BAC44B1E88120E0049DB7D /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BAC44A1E88120E0049DB7D /* libxml2.2.tbd */; };
 		E3BAC4531E882E280049DB7D /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BAC4521E882E280049DB7D /* MicrosoftAzureMobile.framework */; };
 		E3BAC4571E882E6E0049DB7D /* AZSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BAC4561E882E6E0049DB7D /* AZSClient.framework */; };
@@ -135,7 +134,6 @@
 		E37096F41E3D4D1A0097F7CA /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		E37096F51E3D4D1A0097F7CA /* FilterTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableViewController.xib; sourceTree = "<group>"; };
 		E372E8CA1E789C9900D44375 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E3752D181E7727D700D44196 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		E3752D1A1E77297E00D44196 /* LoginDownloadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDownloadable.swift; sourceTree = "<group>"; };
 		E3764BD91E7C89310014C1CD /* ToyUploadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyUploadable.swift; sourceTree = "<group>"; };
 		E37F2AD81E79C55D00F50243 /* RegisterDownloadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDownloadable.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 		E381C23B1E33D84600560457 /* toyguay_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toyguay_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E381C23E1E33D84600560457 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E381C2401E33D84600560457 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E381C2431E33D84600560457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E381C2461E33D84600560457 /* toyguay_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = toyguay_iOS.xcdatamodel; sourceTree = "<group>"; };
 		E381C2481E33D84600560457 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E381C24B1E33D84600560457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -166,7 +163,8 @@
 		E3B6CCA61E74AC1700271A3B /* ToyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyService.swift; sourceTree = "<group>"; };
 		E3B6CCA81E74AC4100271A3B /* ServiceStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceStatus.swift; sourceTree = "<group>"; };
 		E3B960FE1E89A21B000BB8CA /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		E3BAC4421E8810650049DB7D /* toyguay_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "toyguay_iOS-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		E3B996781E957E0D00E17E07 /* toyguay_iOS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "toyguay_iOS-Bridging-Header.h"; path = "../toyguay_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		E3B996791E957F1E00E17E07 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E3BAC44A1E88120E0049DB7D /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		E3BAC4521E882E280049DB7D /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		E3BAC4561E882E6E0049DB7D /* AZSClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AZSClient.framework; sourceTree = "<group>"; };
@@ -282,12 +280,12 @@
 				E3ECFBD61E350E4500604344 /* toyguay_iOS.entitlements */,
 				E381C23E1E33D84600560457 /* AppDelegate.swift */,
 				E381C2401E33D84600560457 /* ViewController.swift */,
-				E381C2421E33D84600560457 /* Main.storyboard */,
 				E381C2481E33D84600560457 /* Assets.xcassets */,
 				E381C24A1E33D84600560457 /* LaunchScreen.storyboard */,
 				E381C24D1E33D84600560457 /* Info.plist */,
-				E3BAC4421E8810650049DB7D /* toyguay_iOS-Bridging-Header.h */,
 				E3B960FE1E89A21B000BB8CA /* Notifications.swift */,
+				E3B996781E957E0D00E17E07 /* toyguay_iOS-Bridging-Header.h */,
+				E3B996791E957F1E00E17E07 /* Main.storyboard */,
 			);
 			name = app;
 			sourceTree = "<group>";
@@ -364,7 +362,6 @@
 				E3B6CCA21E74A4EF00271A3B /* ToyDownloadable.swift */,
 				E3B6CCA61E74AC1700271A3B /* ToyService.swift */,
 				E3B6CCA81E74AC4100271A3B /* ServiceStatus.swift */,
-				E3752D181E7727D700D44196 /* LoginService.swift */,
 				E3752D1A1E77297E00D44196 /* LoginDownloadable.swift */,
 				E37F2AD81E79C55D00F50243 /* RegisterDownloadable.swift */,
 				E3764BD91E7C89310014C1CD /* ToyUploadable.swift */,
@@ -572,11 +569,11 @@
 				E34439B01E3767BE00493600 /* NuevoViewController.xib in Resources */,
 				E34439B41E3767CE00493600 /* NotifsViewController.xib in Resources */,
 				E34439B81E3767DB00493600 /* PerfilViewController.xib in Resources */,
+				E3B9967A1E957F1E00E17E07 /* Main.storyboard in Resources */,
 				E34439BC1E37692B00493600 /* SearchViewController.xib in Resources */,
 				E37096F71E3D4D1A0097F7CA /* FilterTableViewController.xib in Resources */,
 				E381C24C1E33D84600560457 /* LaunchScreen.storyboard in Resources */,
 				E381C2491E33D84600560457 /* Assets.xcassets in Resources */,
-				E381C2441E33D84600560457 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,7 +737,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E34439AF1E3767BE00493600 /* NuevoViewController.swift in Sources */,
-				E3752D191E7727D700D44196 /* LoginService.swift in Sources */,
 				E368FAF11E5072360092BCDC /* Search+CoreDataClass.swift in Sources */,
 				E3E79F0B1E508D2200C380B3 /* Category+CoreDataProperties.swift in Sources */,
 				E3C41F811E37746800DD5975 /* ToyCollectionViewCell.swift in Sources */,
@@ -820,14 +816,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E381C2421E33D84600560457 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E381C2431E33D84600560457 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E381C24A1E33D84600560457 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

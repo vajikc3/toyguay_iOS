@@ -14,6 +14,7 @@ class ProductDetailViewController: UIViewController {
     
     var product: Toy?
 
+    @IBOutlet weak var toyImage: UIImageView!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var userAvatarImageView: UIImageView!
@@ -34,7 +35,31 @@ class ProductDetailViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let url = URL(string: self.product!.imageURL!) {
+            let session = URLSession(configuration: .default)
+            let downloadImgTask = session.dataTask(with: url) { (data, response, error) in
+                if let e = error {
+                    print("Error downloading img: \(e)")
+                } else {
+                    if let res = response as? HTTPURLResponse {
+                        if let imageData = data {
+                            DispatchQueue.main.async {
+                                self.toyImage.contentMode = .scaleAspectFit
+                                self.toyImage.image = UIImage(data: imageData)
+                            }
+                        } else {
+                            print("Couldn't get image")
+                        }
+                    } else {
+                        print("Couldn't get a response")
+                    }
+                }
+            }
+            downloadImgTask.resume()
+        } else {
+            
+        }
+
         self.productTitleLable.text = product?.name ?? ""
         self.productDescriptionLabel.text = String(format: "%@", (product?.descriptionText) ?? "")
         self.priceLabel.text = String(format: "%.2f€", (self.product?.price) ?? 0.0)
@@ -100,20 +125,12 @@ class ProductDetailViewController: UIViewController {
         }
         
         self.sameOne.save()
+        
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func adquirirProductoAction(_ sender: Any) {
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

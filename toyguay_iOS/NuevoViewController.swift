@@ -69,11 +69,6 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func acceptButton(_ sender: Any) {
         let toyUploadable = ToyUploadable()
@@ -90,10 +85,11 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
                 DispatchQueue.main.async {
                     if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                         appDelegate.refrescarDatos()
+                        self.alert(message: "Producto añadido a ToyGuay")
+                        print("response \(ok)")
+                        self.cancelButton((Any).self)
+                        self.tabBarController?.reloadInputViews()
                     }
-                    
-                    self.alert(message: "Producto añadido a ToyGuay")
-                    print("response \(ok)")
                 }
                 
             } else {
@@ -163,7 +159,7 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         container = (blobClient?.containerReference(fromName: "toyguay-image-container"))!
         self.blobId = String(format: "%@.jpg", UUID().uuidString.lowercased())
         self.images?.append(String(format: "https://toyguay.blob.core.windows.net/toyguay-image-container/%@", self.blobId!))
-        print("guardado en imágenes blob: %@ y tenemos count: %d", self.blobId, self.images?.count)
+
         let myBlob = container?.blockBlobReference(fromName: blobId!)
         myBlob?.upload(from: UIImageJPEGRepresentation(photo0ImageView.image!, 0.5)!, completionHandler: { (error) in
             if error != nil {
@@ -182,7 +178,6 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
                                                   completionHandler: { (error, result) in
                                                     
                                                     if let _  = error {
-                                                        print(error)
                                                         return
                                                     }
                                                     if result {
@@ -199,9 +194,6 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         return self.categories.count
     }
     
-    
-    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId: String = "cellId"

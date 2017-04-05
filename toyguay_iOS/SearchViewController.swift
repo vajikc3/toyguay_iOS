@@ -9,35 +9,35 @@
 import UIKit
 import CoreData
 
-class SearchViewController: UIViewController {
-    
-    // MARK: Properties
-    
-    let searchController = UISearchController(searchResultsController: nil)
-    
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var contentView: UIView!
-    var filtroButton : UIButton!
-    var starButton: UIButton!
-
-    
-    // Modelo de pruebas
-    var toys = [Toy]()
-    var filteredToys = [Toy]()
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let sameOne = CoreDataStack.defaultStack(modelName: "toyguay_iOS")!
-        
-        let fr = NSFetchRequest<Toy>(entityName: Toy.entityName)
-        fr.sortDescriptors = [(NSSortDescriptor(key: "name", ascending: true))]
-        toys = try! sameOne.context.fetch(fr)
-        
-
-
-    }
+//class SearchViewController: UIViewController {
+//    
+//    // MARK: Properties
+//    
+//    let searchController = UISearchController(searchResultsController: nil)
+//    
+//    @IBOutlet weak var searchBar: UISearchBar!
+//    @IBOutlet weak var contentView: UIView!
+//    var filtroButton : UIButton!
+//    var starButton: UIButton!
+//
+//    
+//    // Modelo de pruebas
+//    var toys = [Toy]()
+//    var filteredToys = [Toy]()
+//
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        let sameOne = CoreDataStack.defaultStack(modelName: "toyguay_iOS")!
+//        
+//        let fr = NSFetchRequest<Toy>(entityName: Toy.entityName)
+//        fr.sortDescriptors = [(NSSortDescriptor(key: "name", ascending: true))]
+//        toys = try! sameOne.context.fetch(fr)
+//        
+//
+//
+//    }
 //    
 //    func filterContentForSearchText(_ searchText: String) {
 //      
@@ -51,7 +51,7 @@ class SearchViewController: UIViewController {
     
 
 
-}
+//}
 
 //extension SearchViewController: UISearchBarDelegate {
 //    func searchBar(_ searchBar: UISearchBar){

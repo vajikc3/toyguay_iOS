@@ -11,7 +11,6 @@ import Foundation
 struct Config {
     static let kBaseURL: String =  "http://toyguay.com"
     static let kTemporalHeaderAuthenticator: String = ""
-    //"Basic cGFjb0B0ZXN0LmNvbTpwYXNzd29yZA=="
 }
 
 
@@ -52,8 +51,6 @@ class Downloadable {
         
         var localRequest: URLRequest = request
         localRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-        //localRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        //localRequest.addValue(Config.kTemporalHeaderAuthenticator, forHTTPHeaderField: "Authorization")
         return localRequest
     }
     

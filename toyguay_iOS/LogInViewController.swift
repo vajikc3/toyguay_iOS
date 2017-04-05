@@ -16,7 +16,6 @@ class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  //      self.trainAnimation()
         if User.loggedUser() != nil {
             self.dismiss(animated: true, completion: nil)
         }
@@ -30,7 +29,6 @@ class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
         let loginDownloadable = LoginDownloadable()
         loginDownloadable.setData(username: username.text ?? "", password: password.text ?? "")
         loginDownloadable.postLogin { (ok: Bool, token: String?) in
-            print(token)
             if ok {
                 User.usuario = User()
                 User.usuario?.nombre = loginDownloadable.username
@@ -126,22 +124,5 @@ class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         trainImageView.layer.add(animation, forKey: "animation")
     }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

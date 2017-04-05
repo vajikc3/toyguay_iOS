@@ -39,11 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vControllers = [productsVC, mapaVC, nuevoVC, notifsVC, perfilVC]
         tabBarController.viewControllers = vControllers
         window?.rootViewController = tabBarController
-        
-//        let loginVC: LogInViewController = LogInViewController(nibName: nil, bundle: nil)
-//      //   Create the rootVC
-//        let rootVC = loginVC
-//        window?.rootViewController = rootVC
+
         
         // Display
         window?.makeKeyAndVisible()
@@ -120,8 +116,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 try context.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
@@ -138,8 +132,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         toyService.getToys { (status, toys) in
             if let toysUnwrapped: [ToyData] = toys as [ToyData]? {
                 for toy in toysUnwrapped {
-                    print(toy.creationDate)
-                    let t = Toy(id: toy.id!, name: toy.name!, descriptionText: toy.description!, imageURL: toy.image![0], price: Float(toy.price!), userId: toy.userId!, createdDate: toy.creationDate!, latitude: (toy.location?[0])!, longitude: (toy.location?[1])!, state: toy.state!, username: toy.nickname!, inContext: (sameOne.context))
+                    _ = Toy(id: toy.id!, name: toy.name!, descriptionText: toy.description!, imageURL: toy.image![0], price: Float(toy.price!), userId: toy.userId!, createdDate: toy.creationDate!, latitude: (toy.location?[0])!, longitude: (toy.location?[1])!, state: toy.state!, username: toy.nickname!, inContext: (sameOne.context))
                     
                     
                 }

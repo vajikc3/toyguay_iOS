@@ -109,28 +109,6 @@ class PerfilViewController: UIViewController {
         gridCollectionView.frame = frame
     }
 
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-
-
-
 }
 
 
@@ -150,7 +128,29 @@ extension PerfilViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ToyCollectionViewCell
-        cell.imageView.image = UIImage.init(named: self.toys[indexPath.row].name!)
+        if let url = URL(string: self.toys[indexPath.row].imageURL!) {
+            let session = URLSession(configuration: .default)
+            let downloadImgTask = session.dataTask(with: url) { (data, response, error) in
+                if let e = error {
+                    print("Error downloading img: \(e)")
+                } else {
+                    if let res = response as? HTTPURLResponse {
+                        if let imageData = data {
+                            DispatchQueue.main.async {
+                                cell.imageView.contentMode = .scaleAspectFit
+                                cell.imageView.image = UIImage(data: imageData)
+                            }
+                        } else {
+                            print("Couldn't get image")
+                        }
+                    } else {
+                        print("Couldn't get a response")
+                    }
+                }
+            }
+            downloadImgTask.resume()
+        }
+
         cell.descriptionLabel.text = self.toys[indexPath.row].name
         cell.priceLabel.text = NSString(format: "%.2f", self.toys[indexPath.row].price) as String
         return cell

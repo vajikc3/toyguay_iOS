@@ -44,8 +44,6 @@ class ToysDownloadable: Downloadable {
                 }else {
                     taskCallback(false, nil)
                 }
-                
-                
             }
         }else {
             taskCallback(false, [])
@@ -67,7 +65,7 @@ class ToysDownloadable: Downloadable {
         let user: [String: Any?]? = self.fill(dictionary: dictionary, withKey: "seller")
         let nickname: String? = self.fill(dictionary: user!, withKey: "nick_name")
         let userId: String? = self.fill(dictionary: user!, withKey: "_id")
-        var creationDate: String? = self.fill(dictionary: dictionary, withKey: "createdAt")
+        let _: String? = self.fill(dictionary: dictionary, withKey: "createdAt")
         let locationDict: [String: Any?]? = self.fill(dictionary: user!, withKey: "location")
         var location: [Double]? = [0.0, 0.0]
         
@@ -82,7 +80,6 @@ class ToysDownloadable: Downloadable {
             image?.append("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Juguetes-Tule-Oaxaca-Mexico.jpg/250px-Juguetes-Tule-Oaxaca-Mexico.jpg")
         }
 
-        print(creationDate)
         let currentToy:ToyData = ToyData(id: id, name: name, description: description, price: price, categories: categories, image: image, nickname: nickname, userId: userId, creationDate: Date(), location: location, state: state)
 
         return currentToy

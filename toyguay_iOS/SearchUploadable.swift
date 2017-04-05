@@ -25,8 +25,7 @@ class SearchUploadable: Downloadable {
         
         let post_data: NSDictionary = NSMutableDictionary()
         
-        post_data.setValue(name, forKey: "name")
-        post_data.setValue(description, forKey: "description")
+        
         post_data.setValue(price, forKey: "price")
         post_data.setValue(categories, forKey: "categories")
         
@@ -48,7 +47,6 @@ class SearchUploadable: Downloadable {
                     print("toy uploaded")
                     taskCallback(true, nil)
                 }else {
-                    print("\(responseObject)")
                     taskCallback(false, nil)
                 }
             }
@@ -68,7 +66,7 @@ class SearchUploadable: Downloadable {
     private func postToyURL() -> URL? {
         let token: String = User.usuario?.token ?? ""
         print("token: \(token)")
-        return URL(string:  Config.kBaseURL + "/api/v1/toys?token=" + token)
+        return URL(string:  Config.kBaseURL + "/api/v1/searches?token=" + token)
     }
     
 }

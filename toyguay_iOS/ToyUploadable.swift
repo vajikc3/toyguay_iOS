@@ -54,28 +54,18 @@ class ToyUploadable: Downloadable {
             self.execSecureTask(request: request)  { (finishDone, responseObject) in
                 
                 if finishDone == true {
-                    
                     if let completeJSON:[String:Any?] = responseObject as? [String:Any?] {
-                        if let json:[[String:Any?]] = completeJSON["toy"] as? [[String:Any?]] {
-                            var toy:[ToyData] = [ToyData]()
-                            print(toy)
-                            for element: [String: Any?] in json{
-                                for key in element.keys {
-                                    if key == "_id", let toyId = element[key] {
-                                        if (self.images?.count)! > 0 {
-                                            self.postImage(toyId: toyId as! String)
-                                        }
-                                        taskCallback(true, toyId as! String)
-                                    }
-                                }
+                        if let json:[String:Any?] = completeJSON["toy"] as? [String:Any?] {
+                            if let value: Any = json["_id"] {
+                                print(value)
+                                self.postImage(toyId: value as! String)
+                                taskCallback(true, nil)
                             }
-                        }else {
-                            taskCallback(false, nil)
                         }
+                    } else {
+                        taskCallback(true, nil)
                     }
-                    
                 }else {
-                    print("\(responseObject)")
                     taskCallback(false, nil)
                 }
             }
@@ -100,39 +90,25 @@ class ToyUploadable: Downloadable {
     }
     
     private func postImage(toyId: String) {
-        let url = self.postToyURL()
-        let paramString: String =  "url" + (images?[0])! + "&toyid=" + (toyId)
+        let token: String = User.usuario?.token ?? ""
+        let url = URL(string:  Config.kBaseURL + "/api/v1/images?token=" + token)
+        let paramString: String =  "url=" + (images?[0])! + "&toyid=" + toyId
         var request: URLRequest = URLRequest(url: url!, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 30)
         request.httpMethod = "POST"
         
         request.httpBody = paramString.data(using: String.Encoding.utf8)
+        print(request)
         
         self.execSecureTask(request: request)  { (finishDone, responseObject) in
             
             if finishDone == true {
                 print("url subida")
                 
-//                if let completeJSON:[String:Any?] = responseObject as? [String:Any?] {
-//                    if let json:[[String:Any?]] = completeJSON["toy"] as? [[String:Any?]] {
-//                        var toy:[ToyData] = [ToyData]()
-//                        print(toy)
-//                        for element: [String: Any?] in json{
-//                            for key in element.keys {
-//                                if key == "_id", let toyId = element[key] {
-//                                    if (self.images?.count)! > 0 {
-//                                        self.postImage(toyId)
-//                                    }
-//                                    taskCallback(true, toyId as! String)
-//                                }
-//                            }
-//                        }
-//                    }else {
-//                        taskCallback(false, nil)
-//                    }
-//                }
                 
-       
+            } else {
+                print("No se ha podido subir la imagen")
             }
+                
         }
         
     }

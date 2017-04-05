@@ -176,10 +176,10 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgl-tA-dUT">
-                            <rect key="frame" x="0.0" y="391" width="330" height="113"/>
+                            <rect key="frame" x="0.0" y="391" width="330" height="83"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u0q-ms-r5V">
-                                    <rect key="frame" x="0.0" y="0.0" width="330" height="113"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="330" height="83"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableView>
                             </subviews>
@@ -207,7 +207,7 @@
                         <constraint firstItem="w9R-a4-PNa" firstAttribute="top" secondItem="5kq-qP-UXh" secondAttribute="bottom" constant="10" id="Bd1-S7-iyx"/>
                         <constraint firstItem="9qp-oq-ee7" firstAttribute="top" secondItem="EsY-ox-PCZ" secondAttribute="bottom" constant="30" id="GOf-ky-C1j"/>
                         <constraint firstItem="cgl-tA-dUT" firstAttribute="top" secondItem="0Dz-H8-7wS" secondAttribute="bottom" constant="10" id="GYh-Dk-qdM"/>
-                        <constraint firstAttribute="bottom" secondItem="cgl-tA-dUT" secondAttribute="bottom" id="HNp-1P-Geg"/>
+                        <constraint firstAttribute="bottom" secondItem="cgl-tA-dUT" secondAttribute="bottom" constant="30" id="HNp-1P-Geg"/>
                         <constraint firstAttribute="trailing" secondItem="od6-qe-Tzo" secondAttribute="trailing" constant="30" id="HYx-2U-cyg"/>
                         <constraint firstItem="0q4-cH-B5l" firstAttribute="centerX" secondItem="ruy-1P-M6V" secondAttribute="centerX" id="ILz-na-gAz"/>
                         <constraint firstItem="0q4-cH-B5l" firstAttribute="top" secondItem="EsY-ox-PCZ" secondAttribute="bottom" constant="30" id="Lg7-Dn-iQh"/>
