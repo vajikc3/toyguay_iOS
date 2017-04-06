@@ -72,9 +72,7 @@ class RegisterDownloadable: Downloadable {
                         }
                     }
                 }
-            }
-            
-            
+            }     
         }else {
             taskCallback(false, nil)
         }
