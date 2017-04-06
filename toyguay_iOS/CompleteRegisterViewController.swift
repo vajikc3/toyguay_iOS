@@ -41,7 +41,6 @@ class CompleteRegisterViewController: UIViewController {
     func setLocation(latitude: Double, longitude: Double) {
         self.latitude = String(format: "%f", latitude)
         self.longitude = String(format: "%f", longitude)
-        print(latitude)
     }
     
     @IBAction func registerNewUser(_ sender: Any) {

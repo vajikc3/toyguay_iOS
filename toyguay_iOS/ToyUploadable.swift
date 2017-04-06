@@ -34,15 +34,7 @@ class ToyUploadable: Downloadable {
         var paramString = ""
  
         for (key, value) in post_data{
-//            if let value = value as? [String] {
-//                value.forEach({ (blobId: String) in
-//                    paramString = paramString + (key as! String) + "=" + blobId + "&"
-//                })
-//            
-//            }
-//            else{
             paramString = paramString + (key as! String) + "=" + (value as! String) + "&"
-         //   }
         }
         
         if let url:URL = self.postToyURL() {

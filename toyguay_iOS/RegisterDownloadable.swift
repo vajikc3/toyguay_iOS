@@ -70,11 +70,13 @@ class RegisterDownloadable: Downloadable {
                   
                             taskCallback(false, "\(error)")
                         }
+                    } else {
+                        taskCallback(false, "")
                     }
                 }
             }     
-        }else {
-            taskCallback(false, nil)
+        } else {
+            taskCallback(false, "")
         }
     }
     

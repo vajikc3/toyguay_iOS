@@ -104,6 +104,7 @@ class NuevoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.titleTextField.text = ""
         self.descriptionTextField.text = ""
         self.priceTextField.text = ""
+        self.photo0ImageView.image = #imageLiteral(resourceName: "noPhoto")
         self.tableView.reloadData()
     }
     
